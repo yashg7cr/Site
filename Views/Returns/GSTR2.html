@@ -1,0 +1,985 @@
+﻿<style>
+    #gridContainer sup {
+        font-size: 0.8em;
+        vertical-align: super;
+        line-height: 0;
+    }
+
+    .ShowHand {
+        cursor: pointer;
+        cursor: hand;
+    }
+
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+</style>
+<div>
+    <div class="pull-left pageTitle">Inward Supply<span>{{CurrentMonth}}</span></div>
+    <div class="demo-container progressbr pull-right">
+        <div class="brad">
+            <div class="cercle ShowHand" dx-click="PopUpImportData($event)"><img src="../Content/Images/import_data_active.png" /></div>
+            <div>Import data</div>
+        </div>
+        <div class="brad">
+            <div class="cercle ShowHand"  dx-click="PopUpShowForReceiveFromGSTN($event)"><img src="../Content/Images/rec_gstn_active.png" /></div>
+            <div>Receive from GSTN</div>
+        </div>  
+         <div class="brad">
+            <div class="cercle ShowHand" style="background: #808080" dx-click="PopUpShowForSubmitToGSTN($event)"><div class="datecal">15/11/2016</div><img src="../Content/Images/submit_gstn.png" /></div>
+            <div>Submit to GSTN</div>
+        </div>
+        <div class="brad">
+            <div class="cercle ShowHand" style="background: #808080" dx-click="ReturnFileToGSTN($event)"><div class="datecal">31/12/2016</div><img src="../Content/Images/file_returns.png" /></div>
+            <div>File Return</div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<div class="dx-viewport customegridCSS">
+    <div class="demo-container">
+        <div class="longTitle">
+            <h3></h3>
+        </div>
+        <div id="form-container">
+
+            <div id="form" dx-form="formOptions">
+                <div data-options="dxTemplate: { name: 'InvoiceTemplate' }">
+                    <div id="gridContainer" dx-data-grid="gridOptions">
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridOptions.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <!--<a class="dx-Button" ng-click="$parent.gridOptions.editMatchedClick(rowIndex, data)">Matched</a>-->
+                            <div dx-button="{text: 'Auto-populated',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridOptions.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'InvoiceTemplateBtoC' }">
+                    <div id="Div1" dx-data-grid="gridOptionsbtoc">
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridOptionsbtoc.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumnbtoc' }">
+                            <div dx-button="{text: 'Auto-populated',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridOptionsbtoc.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'InvoiceTemplateCNDN' }">
+                    <div id="Div2" dx-data-grid="gridOptionsCNDN">
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridOptionsCNDN.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <!--<a class="dx-Button" ng-click="$parent.gridOptionsCNDN.editClick(rowIndex, data)">Matched</a>-->
+                            <div dx-button="{text: 'Matched',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridOptionsCNDN.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'TDSCreditTemplate' }">
+                    <div id="Div3" dx-data-grid="gridOptionsTDSCredit">
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <div dx-button="{text: 'Matched',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridOptionsTDSCredit.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridOptionsTDSCredit.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'TCSCreditTemplate' }">
+                    <div id="Div6" dx-data-grid="gridOptionsTCSCredit">
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <div dx-button="{text: 'Matched',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridOptionsTCSCredit.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridOptionsTCSCredit.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'ICTTemplate' }">
+                    <div id="Div7" dx-data-grid="gridOptionsICT">
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <div dx-button="{text: 'Matched',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridOptionsICT.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridOptionsICT.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'InvoiceTaxPaidTemplate' }">
+                    <div id="Div8" dx-data-grid="gridOptionsInvoiceTaxPaid">
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <div dx-button="{text: 'Matched',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridOptionsInvoiceTaxPaid.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridOptionsInvoiceTaxPaid.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'ITCReversalTemplate' }">
+                    <div id="Div9" dx-data-grid="gridOptionsITCReversal">
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <div dx-button="{text: 'Matched',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridOptionsITCReversal.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridOptionsITCReversal.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'ISDCreditTemplate' }">
+                    <div id="Div5" dx-data-grid="gridISDCredit">
+
+                        
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <div dx-button="{text: 'Matched',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridISDCredit.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridISDCredit.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'UnregistredTaxpayerTemplate' }">
+                    <div id="Div4" dx-data-grid="gridUnregistredTaxpayer">
+                        <div data-options="dxTemplate: { name: 'ButtoncommandColumn' }">
+                            <!--<a class="dx-Button" ng-click="$parent.gridOptionsCNDN.editClick(rowIndex, data)">Matched</a>-->
+                            <div dx-button="{text: 'Matched',onClick: buttonClicked,type:'success'}" ng-click="$parent.gridUnregistredTaxpayer.editMatchedClick(rowIndex, data)">
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridUnregistredTaxpayer.editClick(rowIndex, data)"><img src="../Content/Images/edit_icon.png" /></a>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div id="tooltip0"></div> <div id="tooltip1"></div><div id="tooltip2"></div><div id="tooltip3"></div><div id="tooltip4"></div><div id="tooltip5"></div><div id="tooltip6"></div><div id="tooltip7"></div><div id="tooltip8"></div>
+
+            <div class="popup" dx-popup="popupTaxPaidOnAdvanceOption">
+                <div data-options="dxTemplate:  { name:'TaxPaidOnAdvancecontent' }">
+                    <div dx-form="popupTaxPaidOnAdvance"></div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupUnregistredTaxpayerDetails">
+                <div data-options="dxTemplate:  { name:'UnregistredTaxpayerDetailscontent' }">
+                    <div dx-form="popupFormUnregistredTaxpayerDetails">
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupUnregisteredTaxGridOption">
+                <div data-options="dxTemplate:  { name:'GridcontentUnregistredTaxpayer' }">
+                    <div dx-form="popupFormUnregisteredTaxgrid">
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectITCNot' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'UnregistredTaxpayerGridTemplate' }">
+                            <div dx-data-grid="UnregistredTaxpayergridSettings"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupTDSCreditOption">
+                <div data-options="dxTemplate:  { name:'TDSCreditcontent' }">
+                    <div dx-form="popupTDSCredit">
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupTDSCreditGridOption">
+                <div data-options="dxTemplate:  { name:'TDSCreditGridcontent' }">
+                    <div dx-form="popupTDSCreditGrid">
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectTDSCredit' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-options="dxTemplate: { name: 'TDSCreditGridTemplate' }">
+                            <div dx-data-grid="TDSCreditgridSettings"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupTCSCreditOption">
+                <div data-options="dxTemplate:  { name:'TCSCreditcontent' }">
+                    <div dx-form="popupTCSCredit">
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupTCSCreditGridOption">
+                <div data-options="dxTemplate:  { name:'TCSCreditGridcontent' }">
+                    <div dx-form="popupTCSCreditGrid">
+                        <div data-options="dxTemplate: { name: 'TCSCreditGridTemplate' }">
+                            <div dx-data-grid="TCSCreditgridSettings"></div>
+                        </div>
+
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectTCSCredit' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupICTGridOption">
+                <div data-options="dxTemplate:  { name:'ICTGridcontent' }">
+                    <div dx-form="popupICTGrid">
+                         <div data-options="dxTemplate: { name: 'ICTGridTemplate' }">
+                            <div dx-data-grid="ICTgridSettings"></div>
+                        </div>
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectICTCredit' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupInvoiceTaxPaidGridOption">
+                <div data-options="dxTemplate:  { name:'InvoiceTaxPaidGridcontent' }">
+                    <div dx-form="popupInvoiceTaxPaidGrid">
+                        <div data-options="dxTemplate: { name: 'InvoiceTaxPaidGridTemplate' }">
+                            <div dx-data-grid="InvoiceTaxPaidgridSettings"></div>
+                        </div>
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectTaxPaid' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupITCReversalGridOption">
+                <div data-options="dxTemplate:  { name:'ITCReversalGridcontent' }">
+                    <div dx-form="popupITCReversalGrid">
+                        <div data-options="dxTemplate: { name: 'ITCReversalGridTemplate' }">
+                            <div dx-data-grid="ITCReversalgridSettings"></div>
+                        </div>
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectITCReversal' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupISDCreditOption">
+               
+                <div data-options="dxTemplate:  { name:'ISDCreditcontent' }">
+                    <div dx-form="popupISDCredit">
+                         <div data-options="dxTemplate: { name: 'ISDCreditGridTemplate' }">
+                            <div dx-data-grid="ISDCreditgridSettings"></div>
+                        </div>
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectUSDCredit' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupOptions">
+                <div data-options="dxTemplate:  { name:'Moredetailcontent' }">
+                    <div dx-form="popupFormBtoBDetails"></div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupBtoCOptions">
+                <div data-options="dxTemplate:  { name:'BtoCcontent' }">
+                    <div dx-form="popupFormBtoCDetails"></div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupCNDN">
+                <div data-options="dxTemplate:  { name:'CNDNcontent' }">
+                    <div dx-form="popupFormCNDN"></div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupBtoBGrid">
+                <div data-options="dxTemplate:  { name:'GridcontentBtoB' }">
+                    <div dx-form="popupFormBtoBGrid">
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectB2B' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                          <div data-options="dxTemplate: { name: 'BtoBGridTemplate' }">
+                            <div dx-data-grid="BtoBgridSettings"></div>
+                        </div>
+                    </div>
+                    <div class="loadpanel" dx-load-panel="acceptloadOptions"></div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupBtoCGrid">
+                <div data-options="dxTemplate:  { name:'GridcontentBtoC' }">
+                    <div dx-form="popupFormgridBtoC">
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupCNDNGrid">
+                <div data-options="dxTemplate:  { name:'GridcontentCNDN' }">  
+                    <div dx-form="popupFormCNDNgrid">
+                        <div data-options="dxTemplate:{ name:'button_acceptrejectCNDN' }">
+                            <div class="col-md-12">
+                                <div class="col-md-8">&nbsp;</div>
+                                <div class="col-md-2 pull-right" style="width: auto; margin-right: -30px;">
+                                    <div style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" class="pull-right" dx-button="{
+                                    text: 'Reject',
+                                    onClick: RejectClick,
+                                        bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 pull-right " style="width: auto; padding-right: 0">
+                                    <div style="color: #fff; background-color: #5cb85c; border-color: #4cae4c;" class="pull-right" dx-button="{
+                                    text: 'Accept',
+                                     onClick: AcceptClick,
+                                     bindingOptions: {
+                                                disabled: 'DisableAcceptReject'
+                                            }
+                                    }">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div data-options="dxTemplate: { name: 'CNDNGridTemplate' }">
+                            <div dx-data-grid="CNDNgridSettings"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupISDCreditDetails">
+                <div data-options="dxTemplate:  { name:'ISDCreditDetailscontent' }">
+                    <div dx-form="popupFormISDCreditDetails">
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupICTReceivedDetails">
+                <div data-options="dxTemplate:  { name:'ICTReceivedDetailscontent' }">
+                    <div dx-form="popupFormICTReceivedDetails">
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupTaxPaidOnInvoiceDetails">
+                <div data-options="dxTemplate:  { name:'TaxPaidOnInvoiceDetailscontent' }">
+                    <div dx-form="popupFormTaxPaidOnInvoiceDetails">
+
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupITCRevasalDetails">
+                <div data-options="dxTemplate:  { name:'ITCRevasalDetailscontent' }">
+                    <div dx-form="popupFormITCRevasalDetails">
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupESigning">
+                <div data-options="dxTemplate:  { name:'ESigning' }">
+                    <signature-pad accept="accept" clear="clear" height="220" width="568"></signature-pad>
+                    <button dx-click="clear()"">Clear signature</button>
+                    <button dx-click="doAccept()">Sign</button>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupImport">
+                <div data-options="dxTemplate:  { name:'DataImport' }">
+                    <!--<div class="container">-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="loadpanel" dx-load-panel="dataImportloadOptions"></div>
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">Import from file</span>
+                                    </legend>
+                                </fieldset>
+                                <div class="col-md-12">
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label class="control control--radio">
+                                                <input type="radio" name="optionsRadios" id="Radio1" value="1" ng-click="currentSelectedOption('1')" />
+                                                Excel
+                                                 <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <br />
+                                        <a href="" class="text-info">(Click here to download template)</a>
+                                    </div>
+                                <div class="col-md-12 des_popup">
+                                    <span><i>Select this option to import data through Excel Sheet</i></span>
+                                 </div>
+                                </div>
+                                <div class="col-md-12">
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label class="control control--radio">
+                                                <input type="radio" name="optionsRadios" id="Radio2" value="1" ng-click="currentSelectedOption('2')" />Text file
+                                                 <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <br />
+                                        <a href=""  class="text-info">(Click here to download template)</a>
+                                    </div>
+                                     <div class="col-md-12 des_popup">
+                                    <span><i>Select this option to import data through Text file</i><br />&nbsp;</span>
+                                 </div>
+                                    <div class="col-md-8">
+                                        <div class="selectIntrFace">{{SelectedImportFileName}} </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <span class="btn btn-default btn-file" style="padding: 4px; font-weight: normal; margin-top: 10px;">Browse
+                                                <input type="file" id="Import" file-model="FileImport" accept=".xlsx,.txt,.xls">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                              <!--  <div class="col-md-12">
+                                    <div style="margin-right: 55px;" class="pull-right" dx-button="{
+                                    text: 'Upload',
+                                    onClick: UploadImportFile
+                                }">
+                                    </div>
+                                </div>-->
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">Import using interface</span>
+                                    </legend>
+                                </fieldset>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label class="control control--radio">
+                                                <input type="radio" name="optionsRadios" id="Radio3" value="1" ng-click="currentSelectedOption('3')" />REST Api
+                                                 <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <br />
+                                        <a href=""  class="text-info">(Click here to configure agent )</a>
+                                    </div>
+                                     <div class="col-md-12 des_popup">
+                                    <span><i>Select this option to retrieve data through Rest API's</i></span>
+                                 </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label class="control control--radio">
+                                                <input type="radio" name="optionsRadios" id="Radio4" value="1" ng-click="currentSelectedOption('4')" />Database
+                                                 <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <br />
+                                        <a href=""  class="text-info">(Click here to import from database)</a>
+                                    </div>
+                                    <div class="col-md-12 des_popup">
+                                    <span><i>Select this option to retrieve data through other databases like Oracle, MySQL, SQL server etc.</i></span>
+                                 </div>
+                                    <!--<div class="col-md-8" style="padding-right: 0">
+                                        <div class="selectIntrFace">{{SelectedInterfaceFileName}} </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="btn btn-default btn-file" style="padding: 4px; font-weight: normal; margin-top: 10px;">Browse
+                                            <input type="file" id="Interface" file-model="FileInterface" accept=".xlsx,.txt,.xls">
+                                        </span>
+                                    </div>-->
+                                </div>
+                               <!-- <div style="margin-right: 50px; margin-top: 10px;" class="pull-right" class="col-md-12">
+                                    <div dx-button="{
+                                    text: 'Upload',
+                                    onClick: UploadInterfaceFile
+                                }">
+                                    </div>
+                                </div>-->
+
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption"></span>
+                                    </legend>
+                                </fieldset>
+                                <div class="col-md-12">
+                                <div class="pull-right" dx-button="{
+                                    text: 'Import',
+                                    onClick: UploadImportFile
+                                }">
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="popup" dx-popup="popupGSTR2Summary">
+                <div data-options="dxTemplate:  { name:'GSTR2SummaryContent' }">
+                    <div dx-form="popupFormGSTR2Summary">
+                       
+                         <div data-options="dxTemplate:  { name:'SummaryData' }">
+                        <div class="summary">
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="GSTIN" style="white-space: nowrap">GSTIN of the taxpayer</label>
+                                    <br />
+                                    <br />
+                                    <small>{{Sum_GSTIN}}</small>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="GSTIN" style="white-space: nowrap">Return Period</label>
+                                    <br />
+                                    <br />
+                                    <small>{{Sum_ReturnPeriod}}</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="GSTIN" style="white-space: nowrap">Total Invoice Value</label>
+                                    <br />
+                                    <br />
+                                    <small>{{Sum_TotalInvValue}}</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="GSTIN">Total Taxable Value</label>
+                                    <br />
+                                    <br />
+                                    <small>{{Sum_TotalTaxValue}}</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="GSTIN">Total IGST</label>
+                                    <br />
+                                    <br />
+                                    <small>{{Sum_IGSTTotal}}</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="GSTIN">Total CGST</label>
+                                    <br />
+                                    <br />
+                                    <small>{{Sum_CGSTTotal}}</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="GSTIN">Total SGST</label>
+                                    <br />
+                                    <br />
+                                    <small>{{Sum_SGSTTotal}}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                          <div data-options="dxTemplate:  { name:'ESign' }">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="loadpanel" dx-load-panel="fileGSTNloadOptions"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="margin-top:-20px;">
+                            <div class="col-md-5">
+                                <fieldset>
+                                    <legend class="addressLegend">E-Sign</legend>
+                                </fieldset>
+                                <div class="col-md-8">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                           <label for="sel1">Provider</label>
+                                          <select class="form-control" id="sel1">
+                                            <option>DIGIO</option>
+                                            
+                                          </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                    <div style="height:50px;width:200px;" dx-button="{text: 'eSign',onClick: EsignClick}"></div>
+                                </div>
+                                <div class="col-md-12">
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="GSTIN">Document Number</label>
+                                            <br />
+                                            <small>{{EsignDocumentId}}</small>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                            <label for="GSTIN">Document Status</label>
+                                            <br />
+                                            <small></small>
+                                        </div>
+                                         </div>
+                                    </div>
+                            </div>
+                            <div class="col-md-5 col-md-offset-2">
+                                <fieldset>
+                                    <legend class="addressLegend">Digital Signature</legend>
+                                </fieldset>
+                                <div class="col-md-8">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                           <label for="sel1">Provider</label>
+                                          <select class="form-control" id="Select1">
+                                            <option>Select</option>
+                                          
+                                          </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-4" >
+                                    <div style="height:50px;width:200px;" dx-button="{text: 'Digital Signature',onClick: SubmitFileToGSTN1}"></div>
+                                </div>
+
+                                <div class="col-md-12">
+
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="GSTIN">Document Number</label>
+                                            <br />
+                                            <small></small>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                            <label for="GSTIN">Document Status</label>
+                                            <br />
+                                            <small></small>
+                                        </div>
+                                       </div>
+
+                                    </div>
+
+
+
+                                <div class="col-md-12">
+                                    <div class="pull-right" dx-button="{text: 'Submit',onClick: SubmitFileToGSTN}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+               <div class="popup" dx-popup="popupSubmitGSTN">
+                <div data-options="dxTemplate:  { name:'SubmitGSTN' }">
+                    <!--<div class="container">-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Please click on submit button to send GST outward details to GSTN</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="loadpanel" dx-load-panel="submitGSTNloadOptions"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-success" style="border-radius: 5px; height: 80px;" ng-show="ShowSubmitGSTRMsg">
+                                        <strong>Success!</strong><br />
+                                        <span>GST on outward supplies for the month of {{CurrentMonth}} is submitted successfully.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <legend class="CustomLegend"><span class="dx-form-group-caption"></span>
+                                </legend>
+                            </fieldset>
+                            <div class="col-md-8"></div>
+                            <div class="col-md-2">
+                                <div style="float: right" dx-button="SubmitToGSTNButtonOptions">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div style="float: right" dx-button="{
+                                    text: 'Close',
+                                    onClick: PopUpShowForSubmitToGSTN
+                                }">
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+            </div>
+
+             <div class="popup" dx-popup="popupReceiveFromGSTN">
+                <div data-options="dxTemplate:  { name:'ReceiveFromGSTN' }">
+                    <!--<div class="container">-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Please click on Receive button to get counterparty records from GSTN.</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="loadpanel" dx-load-panel="ReceiveFromGSTNloadOptions"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-success" style="border-radius: 5px; height: 80px;" ng-show="ShowReceivFromGSTRMsg">
+                                        <strong>Success!</strong><br />
+                                        <span>GSTN data for the month of {{CurrentMonth}} is received successfully.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <legend class="CustomLegend"><span class="dx-form-group-caption"></span>
+                                </legend>
+                            </fieldset>
+                            <div class="col-md-8"></div>
+                             <div class="col-md-2">
+                                <div style="float: right" dx-button="ReceiveFromGSTNButtonOptions">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div style="float: right" dx-button="{
+                                    text: 'Close',
+                                    onClick: PopUpShowForReceiveFromGSTN
+                                }">
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+            </div>
+
+            
+        </div>
+        </div>
+    </div>

@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GST</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link href="../Content/Css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/Css/AdminLTE.min.css" rel="stylesheet" />
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+  -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700" />
+    <link href="../Content/Css/font-awesome.css" rel="stylesheet" />
+    <link href="../Content/Css/skins/skin-blue.min.css" rel="stylesheet" />
+    <link href="../Content/Css/oneui.css" rel="stylesheet" />
+    <link href="../Content/dxCss/dx.spa.css" rel="stylesheet" />
+    <link href="../Content/dxCss/dx.common.css" rel="stylesheet" />
+    <link href="../Content/dxCss/dx.light.compact.css" rel="stylesheet" />
+    <link href="../Content/Css/Site.css" rel="stylesheet" />
+    <link href="../Content/Css/animate.css" rel="stylesheet" />
+    <!--Dashboard-->
+    <link href="../Content/Css/css.css" rel="stylesheet" />
+    <link href="../Content/Css/custom-styles.css" rel="stylesheet" />
+    <link href="../Content/Css/morris-0.css" rel="stylesheet" />
+    
+    
+    <style>
+        .dx-viewport {
+            min-height: 400px;
+        }
+
+        #nav.affix {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index:10;
+        }
+
+</style>
+   
+</head>
+    
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini" data-ng-app="ExGSP" data-ng-controller="AppCtrl" >
+    <div id="page-loader"></div>
+    <div class="loadpanel" dx-load-panel="LodingOptions"></div>
+    <div class="wrapper" id="datagrid">
+        <!-- Main Header -->
+        <div id="page-container" data-ng-class="{
+            'sidebar-l': oneui.settings.sidebarLeft,
+            'side-overlay-o': oneui.settings.sideOverlayOpen,
+            'side-scroll': oneui.settings.sideScroll,
+            'header-navbar-fixed': oneui.settings.headerFixed
+            
+        }">
+            <!-- Side Overlay-->
+            <aside class="asideCustom" data-ng-include="'partials/base_side_overlay.html'" data-ng-controller="SideOverlayCtrl" id="side-overlay"></aside>
+
+            <!-- Header -->
+            <header class="headerCustome" data-ng-include="'partials/base_header.html'" data-ng-controller="HeaderCtrl" id="header-navbar" class="content-mini content-mini-full"></header>
+            <!-- Left side column. contains the logo and sidebar -->
+
+
+            <!--Start Menu-->
+            <div id="nav" class="headerCustome" style="background-color:transparent; min-height:30px;">
+            <div class="navbar-wrapper">
+            <div class="container-fluid" style="padding:0;margin:0;">
+            <nav class="navbar navbar-fixed-top" style="margin-bottom:0">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed togglCust" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar"
+                        class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li id="M1" class="active"><a href="#Dashboard" >Home</a></li>
+                            <li id="M2" class="inactive" ><a href="#GSTRSelect?Page=1" >Outward Supply</a></li>
+                            <li id="M3" class="inactive"><a href="#GSTRSelect?Page=2" >Inward Supply</a></li>
+                            <li id="M4" class="inactive"><a href="#" >Payments</a></li>
+                            <li id="M5" class="inactive"><a href="#" >Returns</a></li>
+                            <li id="M6" class="dropdown">
+                                <a href="" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="#RegType" class="dropdown-toggle " data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false">Registration</a>
+                                    </li>
+                                    <li><a href="#Log">Log</a></li>
+                                    <li><a href="#GSTR2Populate">Populate GSTR2</a></li>
+
+                                </ul>
+                            </li>
+
+                             <li id="M7" class="dropdown">
+                                <a href="" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="#AllUser" class="dropdown-toggle " data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false">Users</a>
+                                    </li>
+                                    <li><a href="#AllRole">Role</a></li>
+                                    <li><a href="#SystemSchedules">System Schedules</a></li>
+                                    <li><a href="#SystemAgent">System Agents</a></li>
+                                    <li><a href="#AllExportMappings">All Export Mappings</a></li>
+                                    <li><a href="#AgentMonitors">All Agent Monitors</a></li>
+
+                                </ul>
+                            </li>
+                            
+                         
+                        </ul>
+
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+                </div>
+            
+                </div>
+           <!-- END Menu -->   
+                    
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section class="content">
+                    <div id="ViewPort" ng-view>
+                    </div>
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <!-- Main Footer -->
+            <!-- <footer class="main-footer">
+            <!-- To the right 
+            <div class="pull-right hidden-xs">
+                www.excellonsoft.com 
+            </div>
+            <!-- Default to the left 
+            Copyright &copy; 2016 <a>Excellon</a>. All rights reserved.
+        </footer>-->
+        </div>
+        <!-- ./wrapper -->
+        </div>
+        <!-- REQUIRED JS SCRIPTS -->
+        <!-- jQuery 2.2.3 -->
+        <script src="../Scripts/Lib/jquery-2.2.3.min.js"></script>
+        <script src="../Scripts/Lib/jquery.slimscroll.min.js"></script>
+        <script src="../Scripts/Lib/jquery.scrollLock.min.js"></script>
+        <!-- Bootstrap 3.3.6 -->
+        <script src="../Scripts/Lib/bootstrap.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../Scripts/Lib/app.min.js"></script>
+        <script type="text/javascript" src="../Scripts/Lib/angular.min.js"></script>
+        <script type="text/javascript" src="../Scripts/Lib/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="../Scripts/Lib/angular-route.min.js"></script>
+        <script src="../Scripts/Lib/angular-ui-bootstrap-tpls.min.js"></script>
+        <!--<script type="text/javascript" src="Scripts/dxLib/dx.web.js"></script>-->
+        <script type="text/javascript" src="../Scripts/dxLib/dx.all.js"></script>
+
+        <!-- Controllers refrences start-->
+        <script type="text/javascript" src="../Scripts/App/App.Routing.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegType.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm20A.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm20B.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm20C.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm20D.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm7A.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm7B.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm7C.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm7D.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm1A.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm1B.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm1C.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm1D.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm1E.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm1F.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm1G.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm9A.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm9B.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm9C.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm10A.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm10B.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm10C.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Registration/CtrRegForm10D.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Supplies/CtrGSTR1.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Supplies/CtrGSTR2.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrAllRole.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrAllTask.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrAllUser.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrSystemSchedules.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrSystemAgent.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrAllExportMappings.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrAgentMonitors.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Dashboard/Ctrdashboard.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrUserProfile.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Supplies/GSTRSelection.js"></script>
+        <!--<script type="text/javascript" src="Scripts/Ctrs/Admin/CtrGraph.js"></script>-->
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrMyAccount.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrLog.js"></script>
+        <script type="text/javascript" src="../Scripts/Ctrs/Admin/CtrGSTR2Populate.js"></script>
+        <!--Comman-->
+        <script type="text/javascript" src="../Scripts/App/App.Common.js"></script>
+        <script type="text/javascript" src="../Scripts/App/App.Config.js"></script>
+        <script type="text/javascript" src="../Scripts/App/App.ServiceHelper.js"></script>
+        <script type="text/javascript" src="../Scripts/App/App.RootServiceHelper.js"></script>
+        <script type="text/javascript" src="../Scripts/App/App.Status.js"></script> 
+        <!--Dashboard-->
+        <!--<script type="text/javascript" src="Scripts/Lib/custom-scripts.js"></script>-->
+        <script type="text/javascript" src="../Scripts/Lib/morris.js"></script>
+        <script type="text/javascript" src="../Scripts/Lib/raphael-2.js"></script>
+        <script type="text/javascript" src="../Scripts/Lib/signature.js"></script>
+        <script type="text/javascript" src="../Scripts/Lib/signature_pad.min.js"></script>
+        <script type="text/javascript" src="../Scripts/Lib/custom-scripts.js"></script>
+        <script type="text/javascript" src="../Scripts/Lib/digio.js"></script>
+</body>
+</html>

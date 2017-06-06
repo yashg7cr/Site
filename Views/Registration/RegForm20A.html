@@ -1,0 +1,109 @@
+﻿
+<div class="dx-viewport" ng-controller="CtrForm20A">
+    <div class="demo-container">
+        <div class="col-md-6">
+            <div id="form-container">
+                <div id="form" dx-form="formOptions">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <fieldset>
+                <legend class="CustomLegend" ><span class="dx-form-group-caption">Existing Application</span><span class="glyphicon glyphicon-plus" ng-click="showInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                </legend>
+            </fieldset>
+            <div class="alert alert-success">
+                <a href="#" target="_self" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div style="float: left; vertical-align: middle; width: 50%; padding-top: 10px;">
+                    <a ng-click="showInfo(0)" style="cursor: pointer;"><strong>VAT</strong></a>
+                </div>
+                <div style="float: right; text-align: right; padding-right: 30px; font-size: small; width: 40%">
+                    Reg19302j89<br />
+                    12-10-2016
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="alert alert-info">
+                <a href="#" target="_self" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div style="float: left; vertical-align: middle; width: 50%; padding-top: 10px;">
+                    <a ng-click="showInfo(0)" style="cursor: pointer;"><strong>CST</strong></a>
+                </div>
+                <div style="float: right; text-align: right; padding-right: 30px; font-size: small; width: 40%">
+                    Reg19302j89<br />
+                    12-10-2016
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="alert alert-success">
+                <a href="#" target="_self" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div style="float: left; vertical-align: middle; width: 50%; padding-top: 10px;">
+                    <a ng-click="showInfo(0)" style="cursor: pointer;"><strong>Service TAX</strong></a>
+                </div>
+                <div style="float: right; text-align: right; padding-right: 30px; font-size: small; width: 40%">
+                    Reg19302j89<br />
+                    12-10-2016
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="alert alert-info">
+                <a href="#" target="_self" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div style="float: left; vertical-align: middle; width: 50%; padding-top: 10px;">
+                    <a ng-click="showInfo(0)" style="cursor: pointer;"><strong>Central Excise Registration</strong></a>
+                </div>
+                <div style="float: right; text-align: right; padding-right: 30px; font-size: small; width: 40%">
+                    Reg19302j89<br />
+                    12-10-2016
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="alert alert-success">
+                <a href="#" target="_self" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div style="float: left; vertical-align: middle; width: 50%;">
+                    <a ng-click="showInfo(0)" style="cursor: pointer;"><strong>IEC No.<br />
+                        (Importer Exporter Code)</strong></a>
+                </div>
+                <div style="float: right; text-align: right; padding-right: 30px; font-size: small; width: 40%">
+                    Reg19302j89<br />
+                    12-10-2016
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div>
+                <div id="ExistingRegForm"></div>
+                <div>
+                    <div class="popup" dx-popup="popupOptions">
+                        <div data-options="dxTemplate:  { name:'content' }" >
+                           <div dx-form="popupForm"></div>  
+                    </div>
+                </div>
+            </div>
+          
+        </div>     
+      </div>
+        <div>
+             <div class="col-md-12" >
+                <fieldset>
+                    <legend class="CustomLegend">
+                    </legend>
+                </fieldset>
+            </div>
+            <div class="col-md-2">
+                <div dx-button="{
+                        text: '<<Previous',
+                        onClick: goPrev
+                    }">
+                </div>
+            </div>
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-2" >
+                <div style="float:right"  dx-button="{
+                        text: 'Next&gt&gt',
+                        onClick: goNext
+                    }">
+                </div>
+            </div>
+            </div>
+        </div>
+     <div style="clear: both; height:25px"></div>
+</div>

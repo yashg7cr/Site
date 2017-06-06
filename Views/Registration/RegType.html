@@ -1,0 +1,175 @@
+﻿<div>
+<div class="pull-left pageTitle">Registration</div>
+</div>
+<div style="clear:both"></div>
+<style>
+     .dx-overlay-shader {
+    background-color: rgba(58,56,56,0.4) ! important;
+}
+     .dx-popup-content {
+    padding: 10px;
+    font-size: larger;
+}
+
+        .regtypescroll {
+            overflow:auto;
+           max-height:500px;
+        }
+ 
+    </style>
+<div id="page-wrapper" ng-controller="CtrRegType">
+    <!-- /.row -->
+    <div class="dx-viewport">
+        <div class="row" style="padding-bottom:20px;">
+           <div class="regtypescroll">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="CustomLegend">
+                            <label>EXISTING APPLICANT</label></legend>
+                    </fieldset>
+
+                    <div class="radio">
+                        <label class="control control--radio">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="20" ng-click="currentSelectedOption('20')" />Existing Business registered under VAT &Service Tax,(Form Reg-20)
+                            <div class="control__indicator"></div>
+                        </label>
+                    </div>
+                    <div class="margin25">
+                        <span class="hd"><b>Discription:</b></span><br />
+                        Every person registered under an earlier law and having
+                        <br />
+                        <a ng-click="showInfo('20')" href="">Readmore..</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="CustomLegend">
+                            <label>NEW APPLICANT</label></legend>
+                    </fieldset>
+                    <div class="radio">
+                        <label class="control control--radio">
+                            <input type="radio" name="optionsRadios" id="Radio1" value="1" ng-click="currentSelectedOption('1')" />Regular Tax Payer (Form Reg-01)
+                            <div class="control__indicator"></div>
+                        </label>
+                    </div>
+                    <div class="margin25">
+                        <span><b>Discription</b></span><br />
+                        Any regular dealers or ISD
+                        <br />
+                        <a ng-click="showInfo('1')" href="">Readmore..</a>
+                    </div>
+                    <div class="radio">
+                        <label class="control control--radio">
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="7" ng-click="currentSelectedOption('7')" />Taxpayer liable for TDS and TCS (Form Reg-07)
+                            <div class="control__indicator"></div>
+                        </label>
+                    </div>
+                    <div class="margin25">
+                        <span><b>Discription</b></span><br />
+                        Any person required to deduct tax under
+                        <br />
+                        <a ng-click="showInfo('7')" href="">Readmore..</a>
+                    </div>
+                    <div class="radio">
+                        <label class="control control--radio">
+                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="9" ng-click="currentSelectedOption('9')" />Taxpayer with UIN (Eg. Govt.Authority, PSU's etc) (Form Reg-09)
+                            <div class="control__indicator"></div>
+                        </label>
+                    </div>
+                    <div class="margin25">
+                        <span><b>Discription</b></span><br />
+                        Every person required to obtain a unique identity
+                        <br />
+                        <a ng-click="showInfo('9')" href="">Readmore..</a>
+                    </div>
+                    <div class="radio">
+                        <label class="control control--radio">
+                            <input type="radio" name="optionsRadios" id="optionsRadios4" value="10" ng-click="currentSelectedOption('10')" />Non Resident Taxpayer/ Casual Taxpayer (Form REG-10)
+                            <div class="control__indicator"></div>
+                        </label>
+                    </div>
+                    <div class="margin25">
+                        <span><b>Discription</b></span><br />
+                        A non-resident taxable person shall electronically
+                        <br />
+                        <a ng-click="showInfo('10')" href="">Readmore..</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-12">
+             <hr />
+            </div>
+            <div class="col-lg-11"></div>
+            <div class="col-lg-1">
+                <button type="button" ng-click="goToSelected();" class="btn btn-default btn-success">CONTINUE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popupOptionsForm1">
+            <div class="popup" dx-popup="popupOptionsF1">
+                <div data-options="dxTemplate: { name:'info' }">
+    (1) Every person, other than a non-resident taxable person, a person required to deduct tax at source under section 37 and a person required to collect tax at source under section 43C, and every person seeking registration under sub-section (3) of section 19 shall, before applying for registration, declare his Permanent Account Number (PAN), mobile number and e-mail address in Part A of<b> FORM GST REG-01.</b><br /><br />
+
+    (2) On successful verification of the PAN, mobile number and e-mail address, an application reference number shall be generated and communicated to the applicant on the said mobile number and e-mail address.<br /><br />
+
+    (3) Using the reference number generated, the applicant will have to submit the application for registration in Part B of<b> FORM GST REG-01</b>, duly signed along with the documents specified in the said Form.<br /><br />
+
+    (4) On receipt of an application , an acknowledgement shall be issued electronically to the applicant in <b>FORM GST REG-02 </b>at his email Id, and a copy of it would be available on <b>GSP</b> portal as well. However if the applicant applying for the registration is a casual taxable person (Person who is resident of India, but do not have a fixed place of Business in the state where they are doing supplies of goods/ or services for a short duration say one week or 12 weeks but not less than 90 days),than he shall be given a temporary identification number by the<b>GSTN</b>, for making advance deposit of the tax under section 19A and the acknowledgment shall be issued electronically thereafter at given email ID and mobile no.<br />
+                </div>
+            </div>
+    </div>
+        <div id="popupOptionsForm7">
+        <div class="popup" dx-popup="popupOptionsF7">
+            <div data-options="dxTemplate: { name:'info' }">
+                (1) Any person required to deduct tax under sub-section (1) of section 37 or a person required to collect tax at source under section 43C shall submit an application, duly signed, in<b> FORM GST REG-07 </b>for grant of registration. 
+                <br /><br />
+                (2) The proper officer may grant registration after due verification and issue a registration certificate in<b>FORM GST REG-06</b> within three common working days from the date of submission of application
+            </div>
+        </div>
+    </div>
+
+
+     <div id="popupOptionsForm20">
+        <div class="popup"
+            dx-popup="popupOptionsF20">
+            <div data-options="dxTemplate: { name:'info' }">
+                (1) Every person who has been granted a provisional registration under subrule (1) shall submit an application in<b>FORM GST REG–20</b>, duly signed, for grant of regisration along with the information and documents specified in the said application.<br /><br />
+(2) If the information and the particulars furnished in the application are found, by the proper officer, to be correct and complete, a certificate of registration in<b>FORM GST REG-06</b> shall be made available to the registered taxable person electronically on<b> GSP</b>.<br /><br />
+(3) Where the particulars and/or information specified have either not been furnished or not found to be correct or complete, the proper officer shall cancel the provisional registration granted under sub-rule (1) and issue an order in<b>FORM GST REG-22</b>.<br /><br />
+                
+                
+            </div>
+        </div>
+    </div>
+
+     <div id="popupOptionsForm9">
+        <div class="popup"
+            dx-popup="popupOptionsF9">
+            <div data-options="dxTemplate: { name:'info' }">
+                (1) Every person required to obtain a unique identity number under sub-section (6) of section 19 may submit an application duly signed in<b> FORM GST REG-09</b> for grant of registration. (All Un Bodies, Consulate or Embassy of foreign countries are required to obtain UIN Numebr)
+                <br /><br />
+                (2) The proper officer from GSTN may, upon submission of an application in<b> FORM GST REG-9</b> or after filling up the said form, assign a Unique Identity Number to the said person and issue a certificate in<b> FORM GST REG-06</b>, within three common working days from the date of submission of application.
+            </div>
+        </div>
+    </div>
+
+    <div id="popupOptionsForm10">
+        <div class="popup"
+            dx-popup="popupOptionsF10">
+            <div data-options="dxTemplate: { name:'info' }">
+                (1) (1) A non-resident taxable person shall before applying for registration, declare his basic details such as PAN Number, Email Id, Mobile number etc in<b> Part A of FORM GST REG-10.</b>
+                <br /><br />
+                (2) On successful verification of the PAN, mobile number and e-mail address, an application reference number shall be generated and communicated to the applicant on the said mobile number and e-mail address.<br /><br />
+(3) A person applying for registration as a non-resident taxable person shall be given a temporary identification number by the Common Portal for making an advance deposit of tax under section 19A and the acknowledgement under sub-rule (5) of rule 1 shall be issued thereafter.<br /><br />
+(4) The person applying for registration under sub-rule (1), shall make an advance deposit of tax in an amount equivalent to the estimated tax liability of such person during the period for which registration is sought, as specified in section 19A. 
+            </div>
+        </div>
+    </div>
+
+
+</div>

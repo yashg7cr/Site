@@ -1,0 +1,393 @@
+﻿
+<div class="dx-viewport" ng-controller="CtrRegForm20B">
+    <div class="demo-container">
+        <div class="row" style="padding-bottom: 10px;">
+            <div class="col-md-5">
+                <fieldset>
+                    <legend class="CustomLegend"><span class="dx-form-group-caption">Principal place of Business</span><span class="glyphicon glyphicon-plus" ng-click="showAddressInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                    </legend>
+                </fieldset>
+                <div class="col-md-12 addressContainer">
+                    <div class="col-md-12 text-right head_editbutton">
+                        <a class="editbutton">
+                            <span class="glyphicon glyphicon-edit" ng-click="showAddressInfo(0)">
+                                <br />
+                                Edit</span>
+                        </a>
+
+                    </div>
+                    <div class="col-md-6 grayright">
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="addressLegend">Address Details</legend>
+                            </fieldset>
+                            <div class="col-md-12">
+                                <p>
+                                    A-204,Iris,
+                            Banar-Balewadi Road,
+                            411045,Pune Maharashtra.
+                                </p>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Location</label>
+                                <!--<div dx-map="{
+                            provider: 'google',
+                            google: 'AIzaSyBFUgQ1huG-_sebsL8mOkugDshgqx6BKvM',
+                            type: 'roadmap',
+                            zoom: 10,
+                            center: '40.749825, -73.987963'
+                        }"></div>-->
+                                <div dx-map="{
+                            provider: 'bing',
+                            type: 'roadmap',
+                            zoom: 10,
+                            center: '18.5204303, 73.85674369999992',
+                            height: '180',
+                            width: '180'
+                        }">
+                                </div>
+                                <div class="col-md-12 center">
+                                    <label>18.5204303</label>
+                                    <br>
+                                    <small>Latitude</small>
+                                </div>
+                                <div class="col-md-12 center">
+                                    <label>73.856743</label>
+                                    <br>
+                                    <small>Longitude</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="addressLegend">Contact Information</legend>
+                            </fieldset>
+                            <div class="col-md-12">
+                                <label>+91-8445623568</label>
+                                <br>
+                                <small>Mobile Number</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>support@excellonsoft.com</label>
+                                <br>
+                                <small>Office Email</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>+91-8445623568</label>
+                                <br>
+                                <small>Mobile Number</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>123 444-5555</label>
+                                <br>
+                                <small>Office Fax No</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Rented</label>
+                                <br>
+                                <small>Nature of Premises Possession</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Service Provision</label>
+                                <br>
+                                <small>Nature of Business Activities</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="height: 10px;"></div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-sm-offset-1">
+                <fieldset>
+                    <legend class="CustomLegend"><span class="dx-form-group-caption">Additional place of Business</span><span class="glyphicon glyphicon-plus" ng-click="showAddressInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                    </legend>
+                </fieldset>
+                <div class="col-md-12 addressContainer">
+                    <div class="col-md-12 text-right head_editbutton" >
+                        
+                            <span class="glyphicon glyphicon-edit" ng-click="showAddressInfo(0)">
+                                <br />
+                                Edit</span>
+                       <!-- </a>-->
+
+                    </div>
+                    <div class="col-md-6 grayright">
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="addressLegend">Address Details</legend>
+                            </fieldset>
+                            <div class="col-md-12">
+                                <p>
+                                    A-204,Iris,
+                            Banar-Balewadi Road,
+                            411045,Pune Maharashtra.
+                                </p>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Location</label>
+                                <!--<div dx-map="{
+                            provider: 'google',
+                            google: 'AIzaSyBFUgQ1huG-_sebsL8mOkugDshgqx6BKvM',
+                            type: 'roadmap',
+                            zoom: 10,
+                            center: '40.749825, -73.987963'
+                        }"></div>-->
+                                <div dx-map="{
+                            provider: 'bing',
+                            type: 'roadmap',
+                            zoom: 10,
+                            center: '18.5204303, 73.85674369999992',
+                            height: '180',
+                            width: '180'
+                        }">
+                                </div>
+                                <div class="col-md-12 center">
+                                    <label>18.5204303</label>
+                                    <br>
+                                    <small>Latitude</small>
+                                </div>
+                                <div class="col-md-12 center">
+                                    <label>73.856743</label>
+                                    <br>
+                                    <small>Longitude</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="addressLegend">Contact Information</legend>
+                            </fieldset>
+                            <div class="col-md-12">
+                                <label>+91-8445623568</label>
+                                <br>
+                                <small>Mobile Number</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>support@excellonsoft.com</label>
+                                <br>
+                                <small>Office Email</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>+91-8445623568</label>
+                                <br>
+                                <small>Mobile Number</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>123 444-5555</label>
+                                <br>
+                                <small>Office Fax No</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Rented</label>
+                                <br>
+                                <small>Nature of Premises Possession</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Service Provision</label>
+                                <br>
+                                <small>Nature of Business Activities</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="height: 10px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <fieldset>
+                    <legend class="CustomLegend"><span class="dx-form-group-caption">Description of Goods supplied by the Business</span>
+                    </legend>
+                </fieldset>
+                <div dx-data-grid="{
+                    dataSource: {},
+                     editing: {
+                        mode: 'row',
+                        allowAdding: true
+                    },
+                    columns: [{dataField:'SrNo' ,width: 70},
+                    {
+                    dataField: 'Description',
+                    width: 250 },
+                     'HSNCode']
+                }">
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-offset-1">
+                <fieldset>
+                    <legend class="CustomLegend"><span class="dx-form-group-caption">Description of Services supplied by the Business</span>
+                    </legend>
+                </fieldset>
+                <div dx-data-grid="{
+                    dataSource: {},
+                    editing: {
+                        mode: 'row',
+                        allowAdding: true
+                    },
+                    columns: [{dataField:'SrNo' ,width: 70},
+                    {
+                    dataField: 'Description',
+                    width: 250 },
+                     'ServiceAccountingCode']
+                }">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-11">
+                <fieldset>
+                    <legend class="CustomLegend"><span class="dx-form-group-caption">Bank Account Details</span><span class="glyphicon glyphicon-plus" ng-click="showAccountInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                    </legend>
+                </fieldset>
+                <div class="col-md-4">
+                    <div class="accountContainer">
+                        <div class="alert alert-success">
+                            <div class="col-md-4" style="float: right; font-size: 14px;width: 100px;">
+                                <span><a href="#" target="_self" class="close" data-dismiss="alert" style="font-size: 25px;" aria-label="close">&times;</a></span>
+                                <span style="float: right; font-weight: bold">&nbsp;|&nbsp;</span>
+                                <a style="padding-left: 19px"><span class="glyphicon glyphicon-edit" ng-click="showAccountInfo(0)" style="top: 3px;"></span></a>
+                            </div>
+                            <div class="col-md-8" style="margin-bottom: 15px;">
+                                <label>110025645980001</label>
+                                <br>
+                                <small>Account No</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Savings</label>
+                                <br>
+                                <small>Account Type</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>ICICI00059</label>
+                                <br>
+                                <small>IFSC Code</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>
+                                    ICICI Bank,<br />
+                                    Balewadi Banch,Pune</label>
+                                <br>
+                                <small>Branck Address</small>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="accountContainer">
+                        <div class="alert alert-info">
+                            <div class="col-md-4" style="float: right; font-size: 14px;width: 100px;">
+                                <span><a href="#" target="_self" class="close" data-dismiss="alert" style="font-size: 25px;" aria-label="close">&times;</a></span>
+                                <span style="float: right; font-weight: bold">&nbsp;|&nbsp;</span>
+                                <a style="padding-left: 19px"><span class="glyphicon glyphicon-edit" ng-click="showAccountInfo(0)" style="top: 3px;"></span></a>
+                            </div>
+                            <div class="col-md-8" style="margin-bottom: 15px;">
+                                <label>110025645980001</label>
+                                <br>
+                                <small>Account No</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Savings</label>
+                                <br>
+                                <small>Account Type</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>ICICI00059</label>
+                                <br>
+                                <small>IFSC Code</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>
+                                    ICICI Bank,<br />
+                                    Balewadi Banch,Pune</label>
+                                <br>
+                                <small>Branck Address</small>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="accountContainer">
+                        <div class="alert alert-success">
+                            <div class="col-md-4" style="float: right; font-size: 14px;width: 100px;">
+                                <span><a href="#" target="_self" class="close" data-dismiss="alert" style="font-size: 25px;" aria-label="close">&times;</a></span>
+                                <span style="float: right; font-weight: bold">&nbsp;|&nbsp;</span>
+                                <a  style="padding-left: 19px"><span class="glyphicon glyphicon-edit" ng-click="showAccountInfo(0)" style="top: 3px;"></span></a>
+                            </div>
+                            <div class="col-md-8" style="margin-bottom: 15px;">
+                                <label>110025645980001</label>
+                                <br>
+                                <small>Account No</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Savings</label>
+                                <br>
+                                <small>Account Type</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>ICICI00059</label>
+                                <br>
+                                <small>IFSC Code</small>
+                            </div>
+                            <div class="col-md-12">
+                                <label>
+                                    ICICI Bank,<br />
+                                    Balewadi Banch,Pune</label>
+                                <br>
+                                <small>Branck Address</small>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11" >
+                <fieldset>
+                    <legend class="CustomLegend">
+                    </legend>
+                </fieldset>
+            <div class="col-md-2">
+                <div dx-button="{
+                        text: '<<Previous',
+                        onClick: goPrev
+                    }">
+                </div>
+            </div>
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-2" >
+                <div style="float:right"  dx-button="{
+                        text: 'Next&gt&gt',
+                        onClick: goNext
+                    }">
+                </div>
+            </div>
+            </div>
+            <div>
+                <div class="popup" dx-popup="popupAccountOptions">
+                    <div data-options="dxTemplate:  { name:'Accountcontent' }" >
+                           <div dx-form="popupFormAccount"></div>  
+                </div> 
+               </div>
+
+                <div class="popup" dx-popup="popupAddressOptions">
+                    <div data-options="dxTemplate:  { name:'Addresscontent' }" >
+                           <div dx-form="popupFormAddress"></div>  
+                       
+                </div>
+            </div>
+    </div>
+</div>

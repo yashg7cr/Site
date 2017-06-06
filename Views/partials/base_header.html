@@ -1,0 +1,224 @@
+<style>
+    .put-center {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+
+<div class="headerCustome">
+    <!-- Header Navigation Right -->
+    <div class="userStatics">
+        <div>
+            <div id="panelProgress" class="alert alert-info highlight">
+                <div class="col-md-10">
+                    <div id ="imgProgess" class="put-center">
+                        <img src="../../Content/Images/progress.gif" />
+                    </div>
+                    <div id="msgProgess" class="put-center" style="padding: 5px; padding-left: 0">
+                        DATA HERE<br />
+                    </div>
+                </div>
+                <div class="col-md-2 ">
+                    <a id="flipc" href="" class="close pull-right" aria-label="close">Dismiss</a>
+                </div>
+            </div>
+
+            <div id="panel" class="alert alert-info highlight">
+                <a id="flipa" href="" class="close" aria-label="close">Dismiss</a>
+                <span>
+                    <div>
+                        <div class="pull-left">
+                            <div style="font-size: 30px; color: #2c96d4; padding: 4px 4px 4px 30px; font-weight: bold">10</div>
+                        </div>
+                        <div class="pull-left" style="padding: 10px; padding-left: 0">
+                            December<br />
+                            2016
+                        </div>
+                    </div>
+                </span>
+                <div style="margin-top: 20px; text-align: center">Last date for GSTR1 Submission</div>
+            </div>
+        </div>
+
+        <div class="pull-right">
+            <div data-ng-include="pathForHeaderStatus" data-ng-controller="StatusCtrl"></div>
+
+            <!--Status-->
+            <!--          <div class="col-sm-12 summaries">
+                <div class="col-sm-4" style="padding-left: 0;">
+
+                    <div class="col-sm-12" style="padding: 0;">
+                        <fieldset>
+                            <legend class="CustomLegend" style="height: 32px; margin-bottom: 0">
+                                <label><span class="dx-form-group-caption" style="color: #fff; font-size: 20px; font-weight: normal">Status</span></label>
+                                <br />
+                                <br />
+                            </legend>
+                        </fieldset>
+                         <div class="block-content block-content-full text-center">
+                             <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="col-sm-12" style="padding: 0;">
+                        <fieldset>
+                            <legend class="CustomLegend" style="height: 32px; margin-bottom: 0">
+                                <label><span class="dx-form-group-caption" style="color: #fff; font-size: 20px; font-weight: normal">Tax Summary</span></label>
+                                <br />
+                                <br />
+                            </legend>
+                        </fieldset>
+                        CHART B
+                    </div>
+
+                </div>
+                <div class="col-sm-4" style="padding-right: 0;">
+                    <div class="col-sm-12" style="padding: 0;">
+                        <fieldset>
+                            <legend class="CustomLegend" style="height: 32px; margin-bottom: 0">
+                                <label><span class="dx-form-group-caption" style="color: #fff; font-size: 20px; font-weight: normal">Invoice</span></label>
+                                <br />
+                                <br />
+                            </legend>
+                        </fieldset>
+                        CHART C
+                    </div>
+
+                </div>
+            </div>-->
+            <!----Status End -->
+            <ul class="nav-header pull-right" style="position: absolute; right: 5px;">
+                <!--   <li class="dropdown dropdown-menunotification">
+                               <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                   <i ><img src="../../Content/Images/notification.png" /><span class="badge">5</span></i>
+                               </a>
+                               <ul class="dropdown-menu dropdown-alerts">
+                                   <li>
+                                       <a href="#">
+                                           <div>
+                                               <i class="fa fa-comment fa-fw"></i>New Comment
+                                       <span class="pull-right text-muted small">4 min</span>
+                                           </div>
+                                       </a>
+                                   </li>
+                                   <li class="divider"></li>
+                                   <li>
+                                       <a href="#">
+                                           <div>
+                                               <i class="fa fa-twitter fa-fw"></i>3 New Followers
+                                       <span class="pull-right text-muted small">12 min</span>
+                                           </div>
+                                       </a>
+                                   </li>
+                                   <li class="divider"></li>
+                                   <li>
+                                       <a href="#">
+                                           <div>
+                                               <i class="fa fa-envelope fa-fw"></i>Message Sent
+                                       <span class="pull-right text-muted small">4 min</span>
+                                           </div>
+                                       </a>
+                                   </li>
+                                   <li class="divider"></li>
+                                   <li>
+                                       <a href="#">
+                                           <div>
+                                               <i class="fa fa-tasks fa-fw"></i>New Task
+                                       <span class="pull-right text-muted small">4 min</span>
+                                           </div>
+                                       </a>
+                                   </li>
+                                   <li class="divider"></li>
+                                   <li>
+                                       <a href="#">
+                                           <div>
+                                               <i class="fa fa-upload fa-fw"></i>Server Rebooted
+                                       <span class="pull-right text-muted small">4 min</span>
+                                           </div>
+                                       </a>
+                                   </li>
+                                   <li class="divider"></li>
+                                   <li>
+                                       <a class="text-center" href="#">
+                                           <strong>See All Alerts</strong>
+                                           <i class="fa fa-angle-right"></i>
+                                       </a>
+                                   </li>
+                               </ul>
+                </li>-->
+
+                <li>
+                    <nav class="navbar navbar-static-top" role="navigation">
+                        <!-- Sidebar toggle button-->
+                        <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle navigation</span>
+                        </a>
+                        <!-- Navbar Right Menu -->
+                        <div class="navbar-custom-menu">
+                            <ul class="nav navbar-nav">
+                                <!-- User Account Menu -->
+                                <li class="dropdown user user-menu">
+                                    <a class="dropdown-toggle " data-toggle="dropdown">
+                                        <!-- The user image in the navbar-->
+                                        <img src="../Content/Images/images.jpg" class="user-image" alt="User Image">
+                                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                        <img src="../Content/Images/arrow_down.png" />
+                                    </a>
+                                    <ul id="login-dp" class="dropdown-menu">
+                                        <li class="user-header">
+                                            <img src="../Content/Images/images.jpg" class="img-circle" alt="User Image">
+                                            <p>
+                                                Shatrughan singh - Vice President
+                                                <small>Product & Engineering</small>
+                                            </p>
+                                            <p>
+                                                Subscription ID
+                                                <small>{{CurrentSubscriptionId}}</small>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <div class="row" style="padding: 0 10px 0 10px">
+                                                <div class="col-md-12">
+                                                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Subscribe</label>
+                                                            <select class="form-control" ng-model="ddlSubscription" ng-options="obj.DisplayName for obj in Subscriptions track by obj.SubscriptionId"></select>
+                                                        </div>
+                                                        <div class="form-group user-footer">
+                                                            <div class="pull-left">
+                                                                <a class="btn btn-flat btn-success" href="#UserProfile" style="color: #fff">My Account</a>
+                                                            </div>
+                                                            <div class="pull-right">
+                                                                <a class="btn btn-flat btn-info" href="../Login.html" style="color: #fff">Sign out</a>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </li>
+                <!-- <li>
+                    <a style="padding:0;color:#fff;font-weight:normal;" href="login.html">Logout</a>
+                </li>-->
+            </ul>
+        </div>
+        <!-- END Header Navigation Right -->
+    </div>
+    <!-- END Header Navigation Right -->
+    <!-- Header Navigation Left -->
+    <div class="gstlogo">
+        <a href="#Dashboard">
+            <img src="../Content/Images/GST_Logo.png" />
+        </a>
+    </div>
+    <!-- END Header Navigation Left -->
+</div>
+

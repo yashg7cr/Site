@@ -1,0 +1,35 @@
+﻿<div>
+    <div class="pull-left pageTitle">All Export Mappings</div>
+</div>
+<div style="clear:both"></div>
+<div class="dx-viewport">
+    <div class="demo-container">
+        <div class="longTitle">
+            <h3></h3>
+        </div>
+        <div id="form-container">
+            <div id="form" data-dx-form="formOptions">
+
+            </div>
+
+        </div>
+
+        <div class="popup" dx-popup="popupOptions">
+            <div data-options="dxTemplate:  { name:'ExportMappingsContent' }">
+                <div dx-form="popupFormExportMappings">
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div dx-data-grid="gridConfig">
+            <div data-options="dxTemplate: { name: 'commandColumn' }">
+                <a class="dx-link" ng-click="$parent.gridConfig.editClick(rowIndex, data)">Edit</a>
+            </div>
+        </div>
+
+    </div>
+</div>

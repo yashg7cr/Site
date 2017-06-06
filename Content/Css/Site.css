@@ -1,0 +1,552 @@
+﻿@font-face {
+    font-family: Roboto Regular;
+    src: url(../Fonts/Roboto-Regular.ttf);
+}
+
+.CustomLegend {
+    margin-bottom: 10px;
+    height: 30px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 20px;
+    padding: 0 0 5px 0;
+    font-family: Roboto Regular;
+    font-weight: 400;
+}
+
+.margin25 {
+    margin-left: 25px;
+    padding: 10px;
+}
+
+.nav-tabs {
+    border-bottom: 0;
+}
+
+.row a {
+    /*color:orange;*/
+}
+
+.CustomLegend label {
+    font-weight: normal;
+}
+
+.glyphicon-edit {
+    cursor: pointer;
+}
+
+.addressLegend {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+    padding: 0 0 5px 0;
+    font-family: Roboto Regular;
+    font-weight: bold;
+    color: #666666;
+}
+
+.addressContainer {
+    border: 2px solid #cccccc;
+    color: #999999;
+    font-size: 12px;
+}
+
+    .addressContainer .editbutton {
+        float: right;
+        color: #a8a8a8;
+        cursor: pointer;
+    }
+
+    .addressContainer .head_editbutton {
+        border-bottom: 1px solid #cccccc;
+        margin-bottom: 4px;
+    }
+
+    .addressContainer .grayright {
+        border-right: 1px solid #cccccc;
+    }
+
+    .addressContainer .col-md-6 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .addressContainer Label {
+        font-size: 14px;
+        font-weight: normal;
+        color: black;
+    }
+
+    .addressContainer P {
+        color: black;
+    }
+
+    .addressContainer .center {
+        text-align: center;
+    }
+
+    .addressContainer .form-group .col-md-12 {
+        margin-bottom: 15px;
+    }
+
+.accountContainer {
+    color: #999999;
+    font-size: 12px;
+}
+
+    .accountContainer Label {
+        font-size: 14px;
+        font-weight: normal;
+        color: black;
+    }
+
+    .accountContainer .glyphicon-edit {
+        cursor: pointer !important;
+    }
+
+    .accountContainer .col-md-12 {
+        margin-bottom: 15px;
+    }
+
+.addressContainer .form-group {
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+.addressContainer img {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    font-size: 25px !important;
+    margin-top: -4px;
+}
+
+.alert {
+    border-radius: 0px !important;
+    padding: 6px;
+    font-size: 15px;
+}
+
+.dx-overlay-shader {
+    background-color: rgba(58,56,56,0.4) !important;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.highlight {
+    margin-top: -102px !important;
+    transition: margin-top .50s;
+    -moz-transition: margin-top .50s; /* Firefox 4 */
+    -webkit-transition: margin-top .50s; /* Safari and Chrome */
+    -o-transition: margin-top .50s; /* Opera */
+}
+
+.highlightRemove {
+    margin-top: 1px !important;
+    transition: margin-top .50s;
+    -moz-transition: margin-top .50s; /* Firefox 4 */
+    -webkit-transition: margin-top .50s; /* Safari and Chrome */
+    -o-transition: margin-top .50s; /* Opera */
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+.control__indicator {
+    position: absolute;
+    top: 2px;
+    left: -5px;
+    height: 16px;
+    width: 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+    background: #ccc;
+}
+
+.control input:checked ~ .control__indicator {
+    background: #fff;
+}
+
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+    background: #fff;
+}
+
+.control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked ~ .control__indicator:after {
+    display: block;
+}
+
+
+.control--radio .control__indicator:after {
+    left: 3px;
+    top: 3px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: #337ab7;
+    border: 1px solid #337ab7;
+}
+
+.radio {
+    margin-bottom: -8px;
+}
+
+.CustomeBox {
+    width: 31%;
+    float: left;
+    margin-right: 10px;
+}
+
+    .CustomeBox .progress {
+        margin-bottom: 1px;
+    }
+
+    .CustomeBox .badge {
+        background-color: #fff;
+        border: 3px solid #777;
+        color: #000;
+        border-radius: 20px;
+        padding: 8px;
+        font-size: 15px;
+    }
+
+    .CustomeBox .row {
+        margin: 0;
+    }
+
+.dx-button-info {
+    background-color: #f39c12;
+    border-color: #f39c12;
+    color: #fff;
+}
+
+    .dx-button-info .dx-icon {
+        color: #fff;
+    }
+
+    .dx-button-info.dx-state-hover {
+        background-color: #ea9001;
+        border-color: #f39c12;
+    }
+
+    .dx-button-info.dx-state-focused {
+        background-color: #f39c12;
+        border-color: #f39c12;
+    }
+
+    .dx-button-info.dx-state-active {
+        background-color: #f39c12;
+        border-color: #f39c12;
+        color: #fff;
+    }
+
+
+
+@media (max-width:991px) {
+
+    .addressContainer img {
+        width: auto;
+        height: auto;
+    }
+
+    .accountContainer .glyphicon-edit {
+        cursor: pointer !important;
+    }
+
+    .addressContainer .editbutton {
+        float: right;
+        color: #a8a8a8;
+        cursor: pointer;
+    }
+}
+
+/*  PLUS MENU RIGHT BOTTOM CORNER */
+
+
+#presentation{
+  width: 480px;
+  height: 120px;
+  padding: 20px;
+  margin: auto;
+  background: #FFF;
+  margin-top: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
+  transition: all 0.3s; 
+  border-radius: 3px;
+}
+
+#presentation:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: all 0.3s;
+  transform: translateZ(10px);
+}
+
+#floating-button{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #00b1f4;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px #666;
+}
+
+.plus{
+  color: white;
+  position: absolute;
+  top: 0;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  line-height: 55px;
+  font-size: 38px;
+  font-family: 'Roboto';
+  font-weight: 300;
+  animation: plus-out 0.3s;
+  transition: all 0.3s;
+}
+
+#container-floating{
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  bottom: 30px;
+  right: 30px;
+  z-index: 50px;
+}
+
+#container-floating:hover{
+  height: 400px;
+  width: 90px;
+  padding: 30px;
+}
+
+#container-floating:hover .plus{
+  animation: plus-in 0.15s linear;
+  animation-fill-mode: forwards;
+}
+
+.edit{
+  position: absolute;
+  top: 0;
+  display: block;
+  bottom: 0;
+  left: 0;
+  display: block;
+  right: 0;
+  padding: 0;
+  opacity: 0;
+  margin: auto;
+  line-height: 65px;
+  transform: rotateZ(-70deg);
+  transition: all 0.3s;
+  animation: edit-out 0.3s;
+}
+
+#container-floating:hover .edit{
+  animation: edit-in 0.2s;
+   animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes edit-in{
+    from {opacity: 0; transform: rotateZ(-70deg);}
+    to {opacity: 1; transform: rotateZ(0deg);}
+}
+
+@keyframes edit-out{
+    from {opacity: 1; transform: rotateZ(0deg);}
+    to {opacity: 0; transform: rotateZ(-70deg);}
+}
+
+@keyframes plus-in{
+    from {opacity: 1; transform: rotateZ(0deg);}
+    to {opacity: 0; transform: rotateZ(180deg);}
+}
+
+@keyframes plus-out{
+    from {opacity: 0; transform: rotateZ(180deg);}
+    to {opacity: 1; transform: rotateZ(0deg);}
+}
+
+.nds{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 300;
+  transform:  scale(0);
+  cursor: pointer;
+}
+
+.nd1{
+  background: #d3a411;
+  right: 40px;
+  bottom: 100px;
+  animation-delay: 0.2s;
+    animation: bounce-out-nds 0.3s linear;
+  animation-fill-mode:  forwards;
+}
+
+.nd3{
+  background: #3c80f6;
+  right: 40px;
+  bottom: 150px;
+  animation-delay: 0.15s;
+    animation: bounce-out-nds 0.15s linear;
+  animation-fill-mode:  forwards;
+}
+
+.nd4 {
+    background: #ba68c8;
+    right: 40px;
+    bottom: 200px;
+    animation-delay: 0.1s;
+    animation: bounce-out-nds 0.1s linear;
+    animation-fill-mode: forwards;
+}
+
+.nd5{
+  /*background-image: url('../Images/bike.jpg');*/
+  background: #d3a411;
+  background-size: 100%;
+  right: 40px;
+  bottom: 250px;
+  animation-delay: 0.08s;
+  animation: bounce-out-nds 0.1s linear;
+  animation-fill-mode:  forwards;
+}
+
+.nd6{
+  /*background-image: url('../Images/bike.jpg');*/
+  background: #3c80f6;
+  background-size: 100%;
+  right: 40px;
+  bottom: 300px;
+  animation-delay: 0.08s;
+  animation: bounce-out-nds 0.1s linear;
+  animation-fill-mode:  forwards;
+}
+
+
+
+
+.Tooltext {
+    position:static;
+    margin-left:-180px;
+    margin-right:50px;
+    margin-top:10px ;
+    text-align:right;
+    background-color:#494949;
+    color:#fff;
+    padding:2px;
+    
+}
+
+
+
+
+@keyframes bounce-nds{
+    from {opacity: 0;}
+    to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes bounce-out-nds{
+    from {opacity: 1; transform: scale(1);}
+    to {opacity: 0; transform: scale(0);}
+}
+
+#container-floating:hover .nds{
+  
+  animation: bounce-nds 0.1s linear;
+  animation-fill-mode:  forwards;
+}
+
+#container-floating:hover .nd3{
+  animation-delay: 0.08s;
+}
+#container-floating:hover .nd4{
+  animation-delay: 0.15s;
+}
+#container-floating:hover .nd5{
+  animation-delay: 0.2s;
+}
+
+.letter{
+  font-size: 23px;
+  font-family: 'Roboto';
+  color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 40px;
+}
+
+.reminder{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  line-height: 40px;
+}
+
+.profile{
+  border-radius: 50%;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 20px;
+}
+
+
+.checkbox label, .radio label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius:0!important;
+}

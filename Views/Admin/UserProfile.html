@@ -1,0 +1,169 @@
+﻿<div>
+<div class="pull-left pageTitle">User Profile</div>
+</div>
+<div style="clear:both"></div>
+<div class="dx-viewport" ng-controller="CtrUserProfile">
+    <div class="demo-container">
+          <div  style="float: right;" dx-button="{
+                                        text: 'Change Account Information',
+                                        onClick: showChangeAccountInfo
+                                    }" >
+                                    </div>
+                                    <div style="float: right; margin-right: 10px;" dx-button="{
+                                        text: 'Change Password',
+                                        onClick: showChangePasswordInfo
+                                    }">
+                                    </div>
+        <div class="longTitle">
+            <h3></h3>
+        </div>
+        <div id="form-container">
+            <div id="form" dx-form="formOptions">
+                <div data-options="dxTemplate: { name: 'ProfileTemplate' }">
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <legend class="CustomLegend">
+                                    <label><span class="dx-form-group-caption">User Details</span></label>
+                                    <br />
+                                    <br />
+                                </legend>
+                            </fieldset>
+                             <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th >Name</th>
+                                        <td >Shartughan Singh</td>
+                                    </tr>
+                                    <tr>
+                                        <th >Date of birth</th>
+                                        <td >09.07.1981</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Address</th>
+                                        <td>Stockholm, Sweden</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Languages</th>
+                                        <td>Swedish, English</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Phone</th>
+                                        <td>+46 00 000 00 00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Website</th>
+                                        <td>mysite.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td><a href="mailto:doe@mysite">doe@mysite</a>.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td>Shatru@excellonsoft.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <td>Shatrughan</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Last Name</th>
+                                        <td>Singh</td>
+                                    </tr>
+                                </tbody>
+                            </table>-->
+                            <div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-sm-offset-1">
+                            <fieldset>
+                                <legend class="CustomLegend">
+                                    <label><span class="dx-form-group-caption">User Rights</span></label>
+                                    <br />
+                                    <br />
+                                </legend>
+                            </fieldset>
+                            <table class="table  table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>User </th>
+                                        <td>Demo.Espl</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Role </th>
+                                        <td>Admin</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div data-options="dxTemplate: { name: 'SubscriptionGridTemplate' }">
+                    <div dx-data-grid="gridSubscription">
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridSubscription.editClick(rowIndex, data)">Edit</a>
+                        </div>
+                    </div>
+                </div>
+                <!--<div data-options="dxTemplate: { name: 'ApplicationGridTemplate' }">
+                    <div dx-data-grid="gridApplication">
+                        <div data-options="dxTemplate: { name: 'commandColumn' }">
+                            <a class="dx-link" ng-click="$parent.gridApplication.editClick(rowIndex, data)">Edit</a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+
+            <div class="popup" dx-popup="popupOptions">
+                <div data-options="dxTemplate:  { name:'Subscriptioncontent' }">
+                    <div dx-form="popupFormSubscription"></div>
+                </div>
+            </div>
+
+         <!--   <div class="popup" dx-popup="popupOptionsApplication">
+                <div data-options="dxTemplate:  { name:'Applicationcontent' }">
+                    <div dx-form="popupFormApplication"></div>
+                </div>
+            </div>-->
+
+            <div class="popup" dx-popup="popupOptionsChangePassword">
+                <div data-options="dxTemplate:  { name:'ChangePasswordcontent' }">
+                    <div dx-form="popupFormChangePassword"></div>
+                </div>
+            </div>
+             <div class="popup" dx-popup="popupOptionsChangeAccountInfo">
+                <div data-options="dxTemplate:  { name:'ChangeAccountInfocontent' }">
+                    <div dx-form="popupFormChangeAccountInfo"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

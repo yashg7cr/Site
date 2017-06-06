@@ -1,0 +1,222 @@
+<!-- Side Overlay Scroll Container -->
+<div id="side-overlay-scroll">
+    <!-- Side Header -->
+    <div class="side-header side-content">
+        <button class="btn btn-default pull-right" type="button" data-ng-click="oneui.settings.sideOverlayOpen = false" data-js-blur>
+            <i class="fa fa-times"></i>
+        </button>
+        <span>
+            <img class="img-avatar img-avatar32" src="Content/Images/user2-160x160.jpg" alt="">
+            <span class="font-w600 push-10-l">Shatrughan Singh</span>
+        </span>
+    </div>
+    <!-- END Side Header -->
+
+    <!-- Side Content -->
+    <div class="side-content remove-padding-t">
+        <!-- Side Overlay Tabs -->
+        <div class="block pull-r-l border-t">
+            <!-- Bootstrap Tabs (data-js-tabs attribute is initialized in js/directives.js) -->
+            <ul class="nav nav-tabs nav-tabs-alt nav-justified" data-js-tabs>
+                <li class="active">
+                    <a href="#tabs-side-overlay-overview"><i class="fa fa-fw fa-coffee"></i> Profile</a>
+                </li>
+                <li>
+                    <a href="#tabs-side-overlay-sales"><i class="fa fa-fw fa-line-chart"></i> Subscribe</a>
+                </li>
+            </ul>
+            <div class="block-content tab-content">
+                <!-- Overview Tab -->
+                <div class="tab-pane fade fade-right in active" id="tabs-side-overlay-overview">
+                    <!-- Activity -->
+                    <div class="block pull-r-l">
+                        <div class="block-header bg-gray-lighter">
+                            <h3 class="block-title">User Details</h3>
+                        </div>
+                        <div class="block-content">
+                            <!-- Activity List -->
+                        <div class="col-sm-12" style="padding:0;">
+                           <!-- <div style="float: right" dx-button="{
+                                        text: 'Change Account Information',
+                                        onClick: showChangeAccountInfo
+                                    }">
+                                    </div>
+                                    <div style="float: right; margin-right: 10px;" dx-button="{
+                                        text: 'Change Password',
+                                        onClick: showChangePasswordInfo
+                                    }">
+                                    </div>-->
+                             <table class="table table-striped" style="padding:0;">
+                                <tbody>
+                                    <tr>
+                                        <th >Name</th>
+                                        <td >Shartughan Singh</td>
+                                    </tr>
+                                    <tr>
+                                        <th >Date of birth</th>
+                                        <td >09.07.1981</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Address</th>
+                                        <td>Stockholm, Sweden</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Languages</th>
+                                        <td>Swedish, English</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Phone</th>
+                                        <td>+46 00 000 00 00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Website</th>
+                                        <td>mysite.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td><a href="mailto:doe@mysite">doe@mysite</a>.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div>
+                            </div>
+                        </div>
+                            <!-- END Activity List -->
+
+                        </div>
+                    </div>
+                    <!-- END Activity -->
+
+                    <!-- Online Friends -->
+                    <div class="block pull-r-l">
+                        <div class="block-header bg-gray-lighter">
+                            <h3 class="block-title">User Rights</h3>
+                        </div>
+                        <div class="block-content block-content-full">
+                            <!-- Users Navigation -->
+                            <div class="col-sm-12" style="padding:0">
+                            <table class="table  table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>User </th>
+                                        <td>Demo.Espl</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Role </th>
+                                        <td>Admin</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                            <!-- END Users Navigation -->
+                        </div>
+                    </div>
+                    <!-- END Online Friends -->
+
+                    <!-- Quick Settings -->
+                     <div class="text-center">
+                            <small><a href="#UserProfile" data-ng-click="oneui.settings.sideOverlayOpen = false" data-js-blur>Detail...</a></small>
+                    </div>
+                    <!-- END Quick Settings -->
+                </div>
+                <!-- END Overview Tab -->
+
+                <!-- Sales Tab -->
+                <div class="tab-pane fade fade-left" id="tabs-side-overlay-sales">
+                    <div class="block pull-r-l">
+                 
+
+                        <!-- Today -->
+                        <div class="block-content block-content-full block-content-mini bg-gray-lighter">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <span class="font-w600 font-s13 text-gray-darker text-uppercase">Your Subscription</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <div class="col-sm-12" style="padding:0;">
+                             <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th >Subscription Name</th>
+                                        <td >Starter</td>
+                                    </tr>
+                                    <tr>
+                                        <th >Product Name</th>
+                                        <td >Starter</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Start Date</th>
+                                        <td>04/04/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <th>End Date</th>
+                                        <td>04/04/2021</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Subscription key</th>
+                                        <td>********</td>
+                                    </tr>
+                                    <tr>
+                                        <th>State</th>
+                                        <td>Active</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- END Today -->
+
+                        <!-- Yesterday -->
+                        <div class="block-content block-content-full block-content-mini bg-gray-lighter">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <span class="font-w600 font-s13 text-gray-darker text-uppercase">Your Application</span>
+                                </div>
+                              
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th >Name</th>
+                                        <td >Satrushang Singh</td>
+                                    </tr>
+                                    <tr>
+                                        <th >Category</th>
+                                        <td >Starter</td>
+                                    </tr>
+                                    <tr>
+                                        <th>State</th>
+                                        <td>Published</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END Yesterday -->
+
+                        <!-- More -->
+                        <div class="text-center">
+                            <small><a href="#UserProfile" data-ng-click="oneui.settings.sideOverlayOpen = false" data-js-blur>Detail...</a></small>
+                        </div>
+                        <!-- END More -->
+                    </div>
+                </div>
+                <!-- END Sales Tab -->
+            </div>
+        </div>
+        <!-- END Side Overlay Tabs -->
+    </div>
+    <!-- END Side Content -->
+
+</div>
+<!-- END Side Overlay Scroll Container -->

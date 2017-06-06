@@ -1,0 +1,164 @@
+﻿<div>
+    <div class="pull-left pageTitle">All System Schedules</div>
+</div>
+<div style="clear:both"></div>
+<div class="dx-viewport">
+    <div class="demo-container">
+        <div class="longTitle">
+            <h3></h3>
+        </div>
+        <div id="form-container">
+            <div id="form" data-dx-form="formOptions">
+
+                
+
+
+            </div>
+          
+        </div>
+       
+        <div class="popup" dx-popup="popupOptions">
+            <div data-options="dxTemplate:  { name:'SystemScheduleContent' }">
+                <div dx-form="popupFormSystemSchedule">
+
+
+                    <div data-options="dxTemplate: { name: 'PatternTemplate' }">
+                        <form class="form-inline">
+                            
+                            <div class="checkbox col-md-2" style="padding:0;">
+                                <div dx-check-box="{
+                                        text: 'Day',
+                                        value: false
+                                    }"></div>
+                            </div>
+                            <div class="form-group col-md-5" style="padding:0;">
+                                
+                                <input type="number" class="form-control" style="width:67%;border-radius:0;" id="">
+                                <label for="number">of every</label>
+                            </div>
+                            <div class="form-group col-md-5" style="padding:0;" >
+                                <input type="number" class="form-control" style="width:70%;border-radius:0;" id="">
+                                <label for="number">month</label>
+                            </div>
+                            <div>&nbsp;</div>
+
+                            <div class="col-md-2" style="padding:0; ">
+
+                                <div dx-check-box="{
+                                        text: 'The',
+                                        value: false
+                                    }"></div>
+
+                            </div>
+                            <div class="form-group col-md-3" style="padding:0;">
+                                <select class="form-control" id="sel1" style="width:60%;border-radius:0;">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group col-md-4" style="padding:0;">
+                                <select class="form-control" id="sel1" style="width:55%;border-radius:0;">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                                <label for="number">of every</label>
+                            </div>
+                            <div class="form-group col-md-3" style="padding:0;">
+                                <input type="number" class="form-control" style="width:50%; border-radius:0;" id="">
+                                <label for="number">month</label>
+                            </div>
+
+
+                           
+                        </form>
+                    </div>
+
+
+
+
+                    <div data-options="dxTemplate: { name: 'PatternTemplateYear' }">
+                        <form class="form-inline">
+                            <div class="checkbox col-md-2" style="padding:0;border-radius:0;">
+                                <div dx-check-box="{
+                                        text: 'Every',
+                                        value: false
+                                    }"></div>
+                            </div>
+                            <div class="form-group col-md-5" style="padding:0;">
+
+                                <select class="form-control" id="sel1" style="width:90%;border-radius:0;">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                                
+                            </div>
+                            <div class="form-group col-md-5" style="padding:0;">
+                                <input type="number" class="form-control" style="width:90%;border-radius:0;" id="">
+                            </div>
+                            <div>&nbsp;</div>
+
+                            <div class="checkbox col-md-2" style="padding:0; ">
+                                <div dx-check-box="{
+                                        text: 'The',
+                                        value: false
+                                    }"></div>
+                            </div>
+                            <div class="form-group col-md-3" style="padding:0;">
+                                <select class="form-control" id="sel1" style="width:70%;border-radius:0;">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group col-md-4" style="padding:0;">
+                                <select class="form-control" id="sel1" style="width:70%;border-radius:0;">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                                <label for="number">of</label>
+                            </div>
+                            <div class="form-group col-md-3" style="padding:0;">
+                                <input type="number" class="form-control" style="width:50%; border-radius:0;" id="">
+                                <label for="number">month</label>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div dx-data-grid="gridConfig">
+            <div data-options="dxTemplate: { name: 'commandColumn' }">
+                <a class="dx-link" ng-click="$parent.gridConfig.editClick(rowIndex, data)">Edit</a>
+            </div>
+        </div>
+
+       
+      
+
+
+
+    </div>
+</div>

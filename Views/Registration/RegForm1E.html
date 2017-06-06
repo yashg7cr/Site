@@ -1,0 +1,436 @@
+﻿<div class="dx-viewport" data-ng-controller="RegForm1E">
+    <div class="demo-container">
+        <div class="longTitle">
+            <h3></h3>
+        </div>
+        <div id="form-container">
+            <div id="form" data-dx-form="formOptions">
+                <div data-options="dxTemplate: { name: 'DigitalSignature' }">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">Additional place of Business</span><span class="glyphicon glyphicon-plus" ng-click="showAddressInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                                    </legend>
+                                </fieldset>
+                                <div class="col-md-12 addressContainer">
+                                    <div class="col-md-12 head_editbutton">
+                                        <a class="editbutton">
+                                            <span class="glyphicon glyphicon-edit" ng-click="showAddressInfo(0)">
+                                                <br />
+                                                Edit</span>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-md-6 grayright">
+                                        <div class="form-group">
+                                            <fieldset>
+                                                <legend class="addressLegend">Address Details</legend>
+                                            </fieldset>
+                                            <div class="col-md-12">
+                                                <p>
+                                                    A-204,Iris,
+                            Banar-Balewadi Road,
+                            411045,Pune Maharashtra.
+                                                </p>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>Location</label>
+                                                <!--<div dx-map="{
+                            provider: 'google',
+                            google: 'AIzaSyBFUgQ1huG-_sebsL8mOkugDshgqx6BKvM',
+                            type: 'roadmap',
+                            zoom: 10,
+                            center: '40.749825, -73.987963'
+                        }"></div>-->
+                                                <div dx-map="{
+                            provider: 'bing',
+                            type: 'roadmap',
+                            zoom: 10,
+                            center: '18.5204303, 73.85674369999992',
+                            height: '180',
+                            width: '200'
+                        }">
+                                                </div>
+                                                <div class="col-md-12 center">
+                                                    <label>18.5204303</label>
+                                                    <br>
+                                                    <small>Latitude</small>
+                                                </div>
+                                                <div class="col-md-12 center">
+                                                    <label>73.856743</label>
+                                                    <br>
+                                                    <small>Longitude</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <fieldset>
+                                                <legend class="addressLegend">Contact Information</legend>
+                                            </fieldset>
+                                            <div class="col-md-12">
+                                                <label>+91-8445623568</label>
+                                                <br>
+                                                <small>Mobile Number</small>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>support@excellonsoft.com</label>
+                                                <br>
+                                                <small>Office Email</small>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>+91-8445623568</label>
+                                                <br>
+                                                <small>Mobile Number</small>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>123 444-5555</label>
+                                                <br>
+                                                <small>Office Fax No</small>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>Rented</label>
+                                                <br>
+                                                <small>Nature of Premises Possession</small>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>Service Provision</label>
+                                                <br>
+                                                <small>Nature of Business Activities</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="height: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div data-options="dxTemplate: { name: 'Properiter' }">
+                    <!--<div class="container">-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">Propreitor/Partner Details</span><span class="glyphicon glyphicon-plus" ng-click="showpartnerInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                                    </legend>
+                                </fieldset>
+                                <div class="col-md-12 addressContainer">
+                                    <div class="col-md-12 head_editbutton">
+                                        <a class="editbutton">
+                                            <span class="glyphicon glyphicon-edit" ng-click="showpartnerInfo(0)">
+                                                <br />
+                                                Edit</span>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="../Content/Images/images.jpg" alt="Properiter Photo" />
+
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Mr.Abhay</label>
+                                                <br />
+                                                <small>Full&nbsp;Name</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Male</label>
+                                                <br />
+                                                <small>Gender</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Email</label>
+                                                <br />
+                                                <small>Email</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>1234567890</label>
+                                                <br />
+                                                <small>Mobile&nbsp;Number</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>27012212</label>
+                                                <br />
+                                                <small>Telephone&nbsp;Number</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Mr.Prakash&nbsp;Anil&nbsp;Chauhan</label>
+                                                <br />
+                                                <small>Full&nbsp;Name&nbsp;of&nbsp;Father</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <label>12-03-96</label>
+                                            <br />
+                                            <small>Date&nbsp;Of&nbsp;Birth</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr style="margin: 2px" />
+                                            <div class="col-md-4">
+                                                <div class="form-group" style="border-right: 1px solid; border-color: lightgray;">
+                                                    <label for="lblLegalNamePAN">CEO</label>
+                                                    <br />
+                                                    <small>Designation</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group" style="border-right: 1px solid; border-color: lightgray">
+                                                    <label for="LegalNameAsperState">PAN663133</label>
+                                                    <br />
+                                                    <small>PAN</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="LegalNameAsperState">ABBCB44567A</label>
+                                                    <br />
+                                                    <small>Aadhar&nbsp;No</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr style="margin: 2px" />
+                                            <div class="col-md-4">
+                                                <div class="form-group" style="border-right: 1px solid; border-color: lightgray;">
+                                                    <label for="lblLegalNamePAN">YES</label>
+                                                    <br />
+                                                    <small>Indian&nbsp;Citizen?(Y/N)</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group" style="border-right: 1px solid; border-color: lightgray;">
+                                                    <label for="LegalNameAsperState">DIN663133</label>
+                                                    <br />
+                                                    <small>Director&nbsp;Identification&nbsp;No</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="LegalNameAsperState">PASSCB44567A</label>
+                                                    <br />
+                                                    <small>Passport&nbsp;No</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr style="margin: 2px" />
+                                            <div class="form-group">
+                                                <label for="LegalNameAsperState">A-306,Crosswind Society,Baner,411005,Pune,Maharashtra</label>
+                                                <br />
+                                                <small>Residential&nbsp;Address</small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+                <div data-options="dxTemplate: { name: 'CardDetailsTemplate' }">
+                    <!--<div class="container">-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">Additional Authorized Signatory</span><span class="glyphicon glyphicon-plus" ng-click="showInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                                    </legend>
+                                </fieldset>
+
+
+                                <div class="col-md-11">
+                                    <div dx-check-box="{
+                                        text: 'Are you a primary Authorized Signatory?',
+                                        value: true
+                                    }">
+                                    </div>
+                                    <br />
+                                    <br />
+                                </div>
+
+
+                                <div class="col-md-12 addressContainer">
+                                    <div class="col-md-12 head_editbutton">
+                                        <a class="editbutton">
+                                            <span class="glyphicon glyphicon-edit" ng-click="showInfo(0)">
+                                                <br />
+                                                Edit</span>
+                                        </a>
+
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <img src="../Content/Images/images.jpg" alt="Properiter Photo" />
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Mr.Abhay</label>
+                                                <br />
+                                                <small>Full&nbsp;Name</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Male</label>
+                                                <br />
+                                                <small>Gender</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Email</label>
+                                                <br />
+                                                <small>Email</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>1234567890</label>
+                                                <br />
+                                                <small>Mobile&nbsp;Number</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>27012212</label>
+                                                <br />
+                                                <small>Telephone&nbsp;Number</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Mr.Prakash&nbsp;Anil&nbsp;Chauhan</label>
+                                                <br />
+                                                <small>Full&nbsp;Name&nbsp;of&nbsp;Father</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <label>12-03-96</label>
+                                            <br />
+                                            <small>Date&nbsp;Of&nbsp;Birth</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr style="margin: 2px" />
+                                            <div class="col-md-4">
+                                                <div class="form-group" style="border-right: 1px solid; border-color: lightgray">
+                                                    <label for="lblLegalNamePAN">Authorized Sign</label>
+                                                    <br />
+                                                    <small>Designation</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group" style="border-right: 1px solid; border-color: lightgray">
+                                                    <label for="LegalNameAsperState">PAN663133</label>
+                                                    <br />
+                                                    <small>PAN</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="LegalNameAsperState">ABBCB44567A</label>
+                                                    <br />
+                                                    <small>Aadhar&nbsp;No</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr style="margin: 2px" />
+                                            <div class="col-md-4">
+                                                <div class="form-group" style="border-right: 1px solid; border-color: lightgray">
+                                                    <label for="lblLegalNamePAN">YES</label>
+                                                    <br />
+                                                    <small>Indian&nbsp;Citizen?(Y/N)</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group" style="border-right: 1px solid; border-color: lightgray">
+                                                    <label for="LegalNameAsperState">DIN663133</label>
+                                                    <br />
+                                                    <small>Director&nbsp;Identification&nbsp;No</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="LegalNameAsperState">PASSCB44567A</label>
+                                                    <br />
+                                                    <small>Passport&nbsp;No</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr style="margin: 2px" />
+                                            <div class="form-group">
+                                                <label for="LegalNameAsperState">A-306,Crosswind Society,Baner,411005,Pune,Maharashtra</label>
+                                                <br />
+                                                <small>Residential&nbsp;Address</small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" dx-popup="popupOptions">
+        <div data-options="dxTemplate:  { name:'AdditionalAuthoritycontent' }">
+            <div dx-form="popupFormAdditionalAuthority"></div>
+        </div>
+    </div>
+    <div class="popup" dx-popup="popupAddressOptions">
+        <div data-options="dxTemplate:  { name:'Addresscontent' }">
+            <div dx-form="popupFormAddressOptions"></div>
+        </div>
+    </div>
+    <div class="popup" dx-popup="popupPartenerOptions">
+        <div data-options="dxTemplate:  { name:'Partenercontent' }">
+            <div dx-form="popupFormPartener"></div>
+        </div>
+
+    </div>
+
+
+</div>
+

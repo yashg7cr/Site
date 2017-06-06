@@ -1,0 +1,194 @@
+﻿<style>
+    .CustomLegend
+    {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        font-size: 20px;
+        padding: 0 0 5px 0;
+        font-family: 'Helvetica Neue','Segoe UI',Helvetica,Verdana,sans-serif;
+        font-weight: normal;
+    }
+</style>
+<div class="dx-viewport" data-ng-controller="RegForm1G">
+    <div class="demo-container">
+        <div class="longTitle">
+            <h3></h3>
+        </div>
+        <div id="form-container">
+            <div id="form" data-dx-form="formOptions">
+                <div data-options="dxTemplate: { name: 'DigitalSignature' }">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">List Of Documents</span><span class="glyphicon glyphicon-plus" ng-click="showInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                                    </legend>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="file" id="input002" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+                                    <div class="bootstrap-filestyle input-group">
+                                        <input type="text" class="form-control " placeholder="Photo" disabled="">
+                                        <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                            <label for="input002" class="btn btn-default ">
+                                                <span class="icon-span-filestyle glyphicon glyphicon-paperclip"></span>
+                                                <span class="buttonText"></span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <input type="file" id="input003" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+                                    <div class="bootstrap-filestyle input-group">
+                                        <input type="text" class="form-control " placeholder="Tax Receipt" disabled="">
+                                        <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                            <label for="input003" class="btn btn-default ">
+                                                <span class="icon-span-filestyle glyphicon glyphicon-paperclip"></span>
+                                                <span class="buttonText"></span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <input type="file" id="input004" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+                                    <div class="bootstrap-filestyle input-group">
+                                        <input type="text" class="form-control " placeholder="Bank Passbook First Page" disabled="">
+                                        <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                            <label for="input004" class="btn btn-default ">
+                                                <span class="icon-span-filestyle glyphicon glyphicon-paperclip"></span>
+                                                <span class="buttonText"></span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <input type="file" id="input005" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+                                    <div class="bootstrap-filestyle input-group">
+                                        <input type="text" class="form-control " placeholder="Other" disabled="">
+                                        <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                            <label for="input005" class="btn btn-default ">
+                                                <span class="icon-span-filestyle glyphicon glyphicon-paperclip"></span>
+                                                <span class="buttonText"></span>
+                                            </label>
+                                        </span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <!-- <h1 style="border-bottom:1px;border-bottom-color:#eee;">Aadhar Verification</h1>-->
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">Consent</span>
+                                    </legend>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <p>
+                                    I on behalf of the holder of Aadhaar number 
+                                    give consent to “Goods and Services Tax Network” to obtain my details from UIDAI for the purpose of
+                                    authentication.
+                                    “Goods and Services Tax Network” has informed me that identity information would only
+                                    be used for validating identity of the Aadhaar holder and will be shared with
+                                    Central Identities Data
+                                    Repository only for the purpose of authentication.
+                                </p>
+
+                            </div>
+                          
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">Verification (by authorized signatory)</span>
+                                    </legend>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <p>
+                                    I hereby solemnly affirm and declare that the information given herein above is true and correct to the best
+                                    of my knowledge and belief and nothing has been concealed
+                                    there from
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <fieldset>
+                                    <legend class="CustomLegend"><span class="dx-form-group-caption">Digital Signature</span>
+                                    </legend>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="file" id="input001" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+                                    <div class="bootstrap-filestyle input-group">
+                                        <input type="text" class="form-control " placeholder="Attach your Digital Signature here" disabled="">
+                                        <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                            <label for="input001" class="btn btn-default ">
+                                                <span class="icon-span-filestyle glyphicon glyphicon-paperclip"></span>
+                                                <span class="buttonText"></span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="LegalNameAsperState">Name</label>
+                                    <div dx-text-box="{placeholder: 'Name'}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 ">
+                                <div class="form-group">
+                                    <label for="lblTradeName">Designation</label>
+                                    <div dx-text-box="{placeholder: 'Designation'}">
+                                    </div>
+                              
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="Validationlbl">Place</label>
+                                    <div dx-text-box="{placeholder: 'Place'}">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="Authenticationlbl">Date</label>
+                                    <div dx-date-box="{width:'100%'}"></div>
+                                </div>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                <div id="ExistingRegForm"></div>
+                <div>
+                    <div class="popup" dx-popup="popupOptions"> 
+                        <div data-options="dxTemplate:  { name:'UploadFileContent' }" >
+                           <div dx-form="popupFormUploadFile"></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

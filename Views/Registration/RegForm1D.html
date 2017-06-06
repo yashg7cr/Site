@@ -1,0 +1,141 @@
+﻿<style>
+    .CustomLegend
+    {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        font-size: 20px;
+        padding: 0 0 5px 0;
+        font-family: 'Helvetica Neue','Segoe UI',Helvetica,Verdana,sans-serif;
+        font-weight: normal;
+    }
+</style>
+<div class="dx-viewport" data-ng-controller="RegForm1D">
+    <div class="demo-container">
+        <div class="longTitle">
+            <h3></h3>
+        </div>
+        <div id="form-container">
+            <div id="form" data-dx-form="formOptions">
+                <div data-options="dxTemplate: { name: 'BankAccountTemplate' }">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <fieldset>
+                                <legend class="CustomLegend">Bank Account Details<span class="glyphicon glyphicon-plus" ng-click="showAccountInfo(0)" style="vertical-align: baseline; text-align: right; cursor: pointer; display: inline-block; float: right; padding-right: 30px;"></span>
+                                </legend>
+                            </fieldset>
+                            <div class="col-md-4">
+                                <div class="accountContainer">
+                                    <div class="alert alert-success">
+                                        <div class="col-md-4" style="float: right; font-size: 14px;width: 100px;">
+                                            <span><a href="#" target="_self" class="close" data-dismiss="alert" style="font-size: 20px;" aria-label="close">&times;</a></span>
+                                            <span style="float: right; font-weight: bold">&nbsp;|&nbsp;</span>
+                                            <a style="padding-left: 19px"><span class="glyphicon glyphicon-edit" ng-click="showAccountInfo(0)" style="top: 3px;"></span></a>
+                                        </div>
+                                        <div class="col-md-8" style="margin-bottom: 15px;">
+                                            <label>110025645980001</label>
+                                            <br>
+                                            <small>Account No</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>Savings</label>
+                                            <br>
+                                            <small>Account Type</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>ICICI00059</label>
+                                            <br>
+                                            <small>IFSC Code</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>
+                                                ICICI Bank,<br />
+                                                Balewadi Banch,Pune</label>
+                                            <br>
+                                            <small>Branck Address</small>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="accountContainer">
+                                    <div class="alert alert-info">
+                                        <div class="col-md-4" style="float: right; font-size: 14px;width: 100px;">
+                                            <span><a href="#" target="_self" class="close" data-dismiss="alert" style="font-size: 20px;" aria-label="close">&times;</a></span>
+                                            <span style="float: right; font-weight: bold">&nbsp;|&nbsp;</span>
+                                            <a style="padding-left: 19px"><span class="glyphicon glyphicon-edit" ng-click="showAccountInfo(0)" style="top: 3px;"></span></a>
+                                        </div>
+                                        <div class="col-md-8" style="margin-bottom: 15px;">
+                                            <label>110025645980001</label>
+                                            <br>
+                                            <small>Account No</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>Savings</label>
+                                            <br>
+                                            <small>Account Type</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>ICICI00059</label>
+                                            <br>
+                                            <small>IFSC Code</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>
+                                                ICICI Bank,<br />
+                                                Balewadi Banch,Pune</label>
+                                            <br>
+                                            <small>Branck Address</small>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="accountContainer">
+                                    <div class="alert alert-success">
+                                        <div class="col-md-4" style="float: right; font-size: 14px;width: 100px;">
+                                            <span><a href="#" target="_self" class="close" data-dismiss="alert" style="font-size: 20px;" aria-label="close">&times;</a></span>
+                                            <span style="float: right; font-weight: bold">&nbsp;|&nbsp;</span>
+                                            <a style="padding-left: 19px"><span class="glyphicon glyphicon-edit" ng-click="showAccountInfo(0)" style="top: 3px;"></span></a>
+                                        </div>
+                                        <div class="col-md-8" style="margin-bottom: 15px;">
+                                            <label>110025645980001</label>
+                                            <br>
+                                            <small>Account No</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>Savings</label>
+                                            <br>
+                                            <small>Account Type</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>ICICI00059</label>
+                                            <br>
+                                            <small>IFSC Code</small>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>
+                                                ICICI Bank,<br />
+                                                Balewadi Banch,Pune</label>
+                                            <br>
+                                            <small>Branck Address</small>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="popup" dx-popup="popupOptions">
+                    <div data-options="dxTemplate:  { name:'Accountcontent' }" >
+                           <div dx-form="popupFormAccount"></div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,293 @@
+﻿<script>
+    $(document).ready(function () {
+        $("#flip,#flipa").click(function () {
+            $("#panel").toggleClass("highlightRemove");
+        });
+
+        $("#flipb,#flipc").click(function () {
+            $("#panelProgress").toggleClass("highlightRemove");
+        });
+
+
+    });
+</script>
+
+<div>
+    <div class="pull-left pageTitle">Dashboard</span></div>
+    <!--<button id="flipb">Click For Progress bar popup</button>
+    <button id="flip">Click For GSTR1 Submission</button>-->
+</div>
+<div style="clear: both"></div>
+<div class="popup" dx-popup="popupSubscription">
+    <div data-options="dxTemplate:  { name:'SelectSubscription' }">
+        <div dx-form="popupFormSubscription"></div>
+    </div>
+</div>
+<div id="form" data-dx-form="formOptions">
+
+    <div data-options="dxTemplate: { name: 'Properiter' }">
+        <div class="dx-viewport">
+            <div class="demo-container">
+                <div class="longTitle">
+                    <h3></h3>
+                </div>
+                <div id="form-container">
+                    <div id="page-wrapper">
+                        <div id="page-inner">
+                            <!-- /. ROW  -->
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                    <div class="panel panel-primary text-center no-boder bg-color-red">
+                                        <div class="panel-body" style="padding-bottom:0;">
+                                            <div class="pull-left" style="width:100%">
+                                                 <div class="pull-left">
+                                                     <i class="glyphicon glyphicon-stats" style="font-size:3em"></i>
+                                                    
+                                                      <div style="margin-top:8px;">Current Tax Period &nbsp; <h3>25000</h3></div>
+                                                 </div>
+                                                <div class="pull-right" style="color:#F0433D">
+                                              <i class="glyphicon glyphicon-alert" style="font-size:3em; color:#F0433D"></i>
+                                                    
+                                               <div style="margin-top:8px;">Previous Tax Period &nbsp<h3>1000</h3></div><br />
+                                               </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer back-footer-red">
+                                            Tax Liability
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                    <div class="panel panel-primary text-center no-boder bg-color-blue">
+                                        <div class="panel-body">
+                                             <div class="pull-left" style="position:absolute;width:85%">
+                                                 <div class="text-left pull-left">
+                                                <div>As On Date</div>
+                                                 </div>
+                                                <div class="pull-right">
+                                             <div  class="text-right" ><h3 style="margin-top:0;"> &nbsp;</h3></div>
+                                               </div>
+                                            </div>
+                                            <i class="fa fa-bank" style="font-size:5em"></i>
+                                            <h3>25000</h3>
+                                        </div>
+                                        <div class="panel-footer back-footer-blue">
+                                            ITC Ledger
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                    <div class="panel panel-primary text-center no-boder bg-color-green">
+                                        <div class="panel-body">
+                                             <div class="pull-left" style="position:absolute;width:85%">
+                                                 <div class="text-left pull-left">
+                                                <div>As On Date</div>
+                                                 </div>
+                                                <div class="pull-right">
+                                             <div  class="text-right" ><h3 style="margin-top:0;">&nbsp;</h3></div>
+                                               </div>
+                                            </div>
+                                            <i class="fa fa-rupee" style="font-size:5em"></i>
+                                            <h3>25000</h3>
+                                        </div>
+                                        <div class="panel-footer back-footer-green">
+                                            Cash Ledger
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                    <div class="panel panel-primary text-center no-boder bg-color-brown">
+                                        <div class="panel-body">
+                                             <div class="pull-left" style="position:absolute;width:85%">
+                                                 <div class="text-left pull-left">
+                                                <div>Current Period</div>
+                                                 </div>
+                                                <div class="pull-right">
+                                             <div  class="text-right" ><h3 style="margin-top:0;">&nbsp;</h3></div>
+                                               </div>
+                                            </div>
+                                            <i class="glyphicon glyphicon-eye-open" style="font-size:5em"></i>
+                                            <h3>15000</h3>
+                                        </div>
+                                        <div class="panel-footer back-footer-brown">
+                                            Taxable Turnover
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7 col-sm-12 col-xs-12">
+                                    <div class="panel panel-default" style="height: 465px;">
+                                        <div class="panel-heading">
+                                            ITC status (As on date)
+                                        </div>
+                                        <div class="panel-body">
+                                           <div style="position: relative;" id="morris-bar-chart">
+                                               <!-- <div id="pie" dx-pie-chart="chartPieOptions"></div>-->
+                                                <!--<div id="gauge1" dx-bar-gauge="barGaugeOptions" style="height: 400px;"></div>-->
+                                               <div style="width:100%" class="pull-left" id="gauge" dx-bar-gauge="barGaugeOptions"></div>
+                                             <!--  <div style="width:50%" class="pull-left" id="Div1" dx-bar-gauge="barGaugeOptionsTwo"></div>-->
+                                            </div>
+
+                                        </div>
+                                    </div>                                   
+                                </div>
+                                <div class="col-md-5 col-sm-12 col-xs-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            Output tax liability status for current period
+                                        </div>
+                                        <div class="panel-body">
+                                             <div id="morris-donut-chart">
+                                                <div id="chart" dx-chart="chartOptions"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /. ROW  -->
+
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            Notification
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="list-group">
+
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge">7 minutes ago</span>
+                                                    <i class="fa fa-fw fa-comment"></i>New Updates from GSTN in Registered TRP List
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge">16 minutes ago</span>
+                                                    <i class="fa fa-fw fa-truck"></i>Payment for Last tax period is due
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge">36 minutes ago</span>
+                                                    <i class="fa fa-fw fa-globe"></i>New Updates from Your authorised TRP
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge">1 hour ago</span>
+                                                    <i class="fa fa-fw fa-user"></i>Form 2A (New Updates)
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge">1.23 hour ago</span>
+                                                    <i class="fa fa-fw fa-user"></i>Notice from GSTN (New)
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge">yesterday</span>
+                                                    <i class="fa fa-fw fa-globe"></i>Saved the world
+                                                </a>
+                                            </div>
+                                            <div class="text-right">
+                                                <a href="#">More Tasks <i class="fa fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-8 col-sm-12 col-xs-12">
+
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="">Top 5 Receivers</a></li>
+                                        <li><a data-toggle="tab" href="">Top 5 Suppliers</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="tab1" class="tab-pane fade in active">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    Responsive Table
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>S No.</th>
+                                                                    <th>GISTIN</th>
+                                                                    <th>Name</th>
+                                                                    <th>Performance (Avg)</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>76ABCDE2148F9Z9</td>
+                                                                    <td>Doe</td>
+                                                                    <td class="text-center">97%</td>
+                                                                    
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>68ABCDE2752F2Z1</td>
+                                                                    <td>Marriye</td>
+                                                                    <td class="text-center">95%</td>
+                                                                   
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>68ABCDE2752F2Z1</td>
+                                                                    <td>Nermal</td>
+                                                                    <td class="text-center">94%</td>
+                                                                   
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4</td>
+                                                                    <td>76ABCDE2148F9Z9</td>
+                                                                    <td>Orieal</td>
+                                                                    <td class="text-center">92%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4</td>
+                                                                    <td>76ABCDE2148F9Z9</td>
+                                                                    <td>Orieal</td>
+                                                                    <td class="text-center">90%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4</td>
+                                                                    <td>76ABCDE2148F9Z9</td>
+                                                                    <td>Orieal</td>
+                                                                    <td class="text-center">87%</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tab2" class="tab-pane fade">
+
+                                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        </div>
+                                        <div id="tab3" class="tab-pane fade">
+
+                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- /. ROW  -->
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
